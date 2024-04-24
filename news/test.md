@@ -9,7 +9,7 @@ The quick brown fox jumped ober the lazy dog.
 The *quick brown* fox jumped ober the lazy dog.The quick **brown** fox jumped ober the lazy dog.
 * pippo
 * pluto
-* paperio
+* paperino
 
 1. pippo
 2. pluto
@@ -19,6 +19,17 @@ The *quick brown* fox jumped ober the lazy dog.The quick **brown** fox jumped ob
 ---
 ## altra notizia
 
+<img src="https://www.aib.it/wp-content/uploads/2024/04/banner-sito-aib-san-jordi-1.jpg" width="600">
 
+The quick brown fox jumped ober the lazy dog. The quick brown fox jumped ober the lazy dog. 
+The quick brown fox jumped ober the lazy dog.
 
-<img src="https://www.aib.it/wp-content/uploads/2024/04/banner-sito-aib-san-jordi-1.jpg" width="300">
+The *quick brown* fox jumped ober the lazy dog.The quick **brown** fox jumped ober the lazy dog.
+* pippo
+* pluto
+* paperino
+
+1. pippo
+2. pluto
+
+>The quick brown fox jumped ober the lazy dog. The quick brown fox jumped ober the lazy dog. The quick brown fox jumped ober the lazy dog.
