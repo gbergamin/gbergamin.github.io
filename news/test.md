@@ -19,4 +19,6 @@ The *quick brown* fox jumped ober the lazy dog.The quick **brown** fox jumped ob
 ---
 ## altra notizia
 
-![bella immagine](https://www.aib.it/wp-content/uploads/2024/04/banner-sito-aib-san-jordi-1.jpg|width=250)
+
+
+<img src="https://www.aib.it/wp-content/uploads/2024/04/banner-sito-aib-san-jordi-1.jpg" width="300">
