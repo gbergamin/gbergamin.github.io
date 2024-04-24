@@ -33,3 +33,7 @@ The *quick brown* fox jumped ober the lazy dog.The quick **brown** fox jumped ob
 2. pluto
 
 >The quick brown fox jumped ober the lazy dog. The quick brown fox jumped ober the lazy dog. The quick brown fox jumped ober the lazy dog.
+
+---
+#### Questa newsletter è stata curata da Agnese Cargini.
+
