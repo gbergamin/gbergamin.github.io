@@ -1,1 +1,1 @@
-![logo AIB](https://gbergamin.github.io/news/logo.jpg)
+![logo AIB](https://gbergamin.github.io/news/logo.png)
