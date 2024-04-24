@@ -1,8 +1,10 @@
 ![logo AIB](https://gbergamin.github.io/news/logo.png)
 
-# Nesletter n. 345 del 23 giugno 2025
+## Newsletter n. 345 del 23 giugno 2025
 
-## È disponibile una nuova newletter
+---
+
+### È disponibile una nuova newletter
 The quick brown fox jumped ober the lazy dog. The quick brown fox jumped ober the lazy dog. 
 The quick brown fox jumped ober the lazy dog.
 
@@ -17,7 +19,7 @@ The *quick brown* fox jumped ober the lazy dog.The quick **brown** fox jumped ob
 >The quick brown fox jumped ober the lazy dog. The quick brown fox jumped ober the lazy dog. The quick brown fox jumped ober the lazy dog.
 
 ---
-## altra notizia
+### altra notizia
 
 {img src="https://www.aib.it/wp-content/uploads/2024/04/banner-sito-aib-san-jordi-1.jpg" width="600" /}
 
@@ -35,5 +37,5 @@ The *quick brown* fox jumped ober the lazy dog.The quick **brown** fox jumped ob
 >The quick brown fox jumped ober the lazy dog. The quick brown fox jumped ober the lazy dog. The quick brown fox jumped ober the lazy dog.
 
 ---
-#### Questa newsletter è stata curata da Agnese Cargini.
+##### Questa newsletter è stata curata da Agnese Cargini.
 
