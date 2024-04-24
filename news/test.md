@@ -1,4 +1,4 @@
-![logo AIB](https://gbergamin.github.io/news/logo.png)]
+![logo AIB](https://gbergamin.github.io/news/logo.png)
 
 
 ## Newsletter n. 345 del 23 giugno 2025
