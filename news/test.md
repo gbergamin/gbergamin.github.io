@@ -2,6 +2,7 @@
 
 # Nesletter n. 345 del 23 giugno 2025
 
+## È disponibile una nuova newletter
 The quick brown fox jumped ober the lazy dog. The quick brown fox jumped ober the lazy dog. 
 The quick brown fox jumped ober the lazy dog.
 
