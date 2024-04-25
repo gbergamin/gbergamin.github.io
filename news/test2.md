@@ -22,7 +22,7 @@
 ---
 
 
-#### 1. L'AIB alla Bologna Children's Book fair. 8-11 aprile
+#### 📚 1. L'AIB alla Bologna Children's Book fair. 8-11 aprile
 
 
 L'AIB vi aspetta alla Bologna Children's Book fair da oggi 8 aprile a   
@@ -60,7 +60,7 @@ tradizione
 
 ---
 
-#### 2. Soddisfazione per i risultati delle elezioni EBLIDA
+#### 📚 2. Soddisfazione per i risultati delle elezioni EBLIDA
 
 
 L’AIB esprime soddisfazione per i risultati delle recenti elezioni di   
@@ -77,7 +77,7 @@ Il testo è disponibile alla pagina
 
 ---
 
-#### 3. L’AIB sostiene Il Maggio dei Libri edizione 2024
+#### 📚 3. L’AIB sostiene Il Maggio dei Libri edizione 2024
 
 
 L'AIB, come di consueto, sostiene il Maggio dei libri 2024 promosso   
@@ -93,7 +93,7 @@ Maggiori informazioni sono disponibili alla pagina
 
 ---
 
-#### 4. Biblioteche in movimento: XXXII giornata delle biblioteche lombarde. Milano, 13 aprile
+#### 📚 4. Biblioteche in movimento: XXXII giornata delle biblioteche lombarde. Milano, 13 aprile
 
 
 Anche quest’anno torna la Giornata delle biblioteche lombarde e nella   
@@ -109,7 +109,7 @@ Maggiori informazioni alla pagina
 
 ---
 
-#### 5. IFLA Webinar *AI and the future of digital preservation*. Online, 18 giugno
+#### 📚 5. IFLA Webinar *AI and the future of digital preservation*. Online, 18 giugno
 
 
 Segnaliamo il webinar *AI and the future of digital preservation*      
@@ -123,7 +123,7 @@ E' possibile sottoporre l'abstract del proprio paper entro il 19 aprile.
 
 ---
 
-#### 6. Summer School in Web and Social Media Archiving and Preservation. Online, 17-21 giugno
+#### 📚 6. Summer School in Web and Social Media Archiving and Preservation. Online, 17-21 giugno
 
 
 L'AIB ha concesso il patrocinio alla IV edizione della Summer School   
@@ -136,7 +136,7 @@ iscritti AIB è riservata una quota di iscrizione agevolata.
 
 ---
 
-#### 7. Summer School "La Digital Library: evoluzione, strutture, progetti". Scadenza 30 aprile
+#### 📚 7. Summer School "La Digital Library: evoluzione, strutture, progetti". Scadenza 30 aprile
 
 
 Dal 3 al 7 giugno 2024 si terrà la nona edizione della Summer school   
@@ -152,7 +152,7 @@ Sono previste quote agevolate di iscrizione agli iscritti AIB.
 
 ---
 
-#### 8. Premio Maria A. Abenante. Posticipata scadenza, 31 maggio
+#### 📚 8. Premio Maria A. Abenante. Posticipata scadenza, 31 maggio
 
 
 La scadenza del bando 2024 del Premio Maria A. Abenante è stata   
@@ -168,7 +168,7 @@ sociale e culturale e la dimensione inclusiva.
 
 ---
 
-#### 9. AIB notizie
+#### 📚 9. AIB notizie
 
 
 Sono disponibili su AIB notizie gli articoli:
