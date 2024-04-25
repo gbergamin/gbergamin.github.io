@@ -52,8 +52,8 @@ tradizione
 * 11 aprile ore 11 - Stand AIB (Padiglione 26 numero B26)   
 Premiazione Concorso per giovani illustratori 2024   
 
-Maggiori informazioni alla pagina   
-<https://www.aib.it/eventi/aib-61-bologna-childrens-book-fair/>.
+
+[🔗](https://www.aib.it/eventi/aib-61-bologna-childrens-book-fair/)
 
 
 ---
@@ -69,7 +69,7 @@ presenza in EBLIDA. A lei va il nostro ringraziamento per il grande
 impegno profuso e a Liu il nostro più grande augurio per un proficuo   
 lavoro.
 Il testo è disponibile alla pagina   
-<https://www.aib.it/notizie/soddisfazione-risultati-elezioni-eblida-2/>.
+[🔗](https://www.aib.it/notizie/soddisfazione-risultati-elezioni-eblida-2/)
 
 
 ---
