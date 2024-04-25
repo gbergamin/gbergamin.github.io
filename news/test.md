@@ -26,7 +26,7 @@ The quick **brown** fox jumped over the lazy dog.
 
 
 ---
-## Altra notizia
+### Altra notizia
 
 <img src = "https://www.aib.it/wp-content/uploads/2024/04/banner-sito-aib-san-jordi-1.jpg" width="600">
 
@@ -51,5 +51,5 @@ The quick **brown** fox jumped over the lazy dog.
 
 
 ---
-##### *Questa newsletter è stata curata da Agnese Cargini*.
+*Questa newsletter è stata curata da Agnese Cargini*.
 
