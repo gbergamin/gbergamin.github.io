@@ -1,6 +1,6 @@
 
 
-[aib](https://https://gbergamin.github.io/news/logo.png)
+![logo aib](https://gbergamin.github.io/news/logo.png)
 
 ## AIB Newsletter n. 5 del 8/04/2024
 ---
@@ -12,13 +12,10 @@
 #### 1. L'AIB alla Bologna Children's Book fair. 8-11 aprile
 #### 2. Soddisfazione per i risultati delle elezioni EBLIDA
 #### 3. L’AIB sostiene Il Maggio dei Libri edizione 2024
-#### 4. Biblioteche in movimento: XXXII giornata delle biblioteche
-lombarde. Milano, 13 aprile
+#### 4. Biblioteche in movimento: XXXII giornata delle biblioteche lombarde. Milano, 13 aprile
 #### 5. IFLA Webinar “AI and the future of digital preservation”. Online, 18 giugno
-#### 6. Summer School in Web and Social Media Archiving and Preservation.
-Online, 17-21 giugno
-#### 7. Summer School "La Digital Library: evoluzione, strutture,
-progetti". Scadenza 30 aprile
+#### 6. Summer School in Web and Social Media Archiving and Preservation. Online, 17-21 giugno
+#### 7. Summer School "La Digital Library: evoluzione, strutture, progetti". Scadenza 30 aprile
 #### 8. Premio Maria A. Abenante. Posticipata scadenza, 31 maggio
 #### 9. AIB notizie
 
@@ -26,36 +23,36 @@ progetti". Scadenza 30 aprile
 #### 1. L'AIB alla Bologna Children's Book fair. 8-11 aprile
 
 
-L'AIB vi aspetta alla Bologna Children's Book fair da oggi 8 aprile a
-giovedì 11 con uno nuovo stand al Padiglione 26 numero B26, presso cui
-saranno esposte le novità editoriali dell’AIB e le opere in gara al
-Concorso internazionale per giovani illustratori "Biblioteca, a
-zig-zag tra le frontiere" organizzato dall’AIB Emilia Romagna che
-inoltre promuove l'iniziativa "Reading over the flood" proponendo agli
-editori presenti in Fiera di contribuire alla ricostruzione delle
-biblioteche ragazzi della Romagna, colpite dall’alluvione di maggio
+L'AIB vi aspetta alla Bologna Children's Book fair da oggi 8 aprile a   
+giovedì 11 con uno nuovo stand al Padiglione 26 numero B26, presso cui   
+saranno esposte le novità editoriali dell’AIB e le opere in gara al   
+Concorso internazionale per giovani illustratori "Biblioteca, a   
+zig-zag tra le frontiere" organizzato dall’AIB Emilia Romagna che   
+inoltre promuove l'iniziativa "Reading over the flood" proponendo agli   
+editori presenti in Fiera di contribuire alla ricostruzione delle   
+biblioteche ragazzi della Romagna, colpite dall’alluvione di maggio   
 2023.
 
 Ricordiamo gli appuntamenti AIB e NPL:
 
-9 aprile ore 14.00 - 16,00 Sala Notturno
-1.2.3. primi passi tra libri e numeri alla conquista del mondo
+* 9 aprile ore 14.00 - 16,00 Sala Notturno   
+1.2.3. primi passi tra libri e numeri alla conquista del mondo   
 A cura Nati per Leggere Emilia Romagna e Osservatorio editoriale NpL
 
-9 aprile ore 15.45 - 17.45 Sala Bolero
-FIDATI DI NOI! Adolescenti, lettura e biblioteche
-a cura delle Commissione Nazionale AIB Biblioteche e servizi per
+* 9 aprile ore 15.45 - 17.45 Sala Bolero   
+FIDATI DI NOI! Adolescenti, lettura e biblioteche   
+a cura delle Commissione Nazionale AIB Biblioteche e servizi per   
 ragazze e ragazzi
 
-10 aprile ore 14,30 Sala Ronda - Centro Servizi 1° piano Blocco C
-La statistica unisce e divide le nuove generazioni
-Istat e AIB Emilia-Romagna in un dialogo costruttivo tra innovazione e
-tradizione
+* 10 aprile ore 14,30 Sala Ronda - Centro Servizi 1° piano Blocco C   
+La statistica unisce e divide le nuove generazioni   
+Istat e AIB Emilia-Romagna in un dialogo costruttivo tra innovazione e   
+tradizione  
 
-11 aprile ore 11 - Stand AIB (Padiglione 26 numero B26)
-Premiazione Concorso per giovani illustratori 2024
+* 11 aprile ore 11 - Stand AIB (Padiglione 26 numero B26)   
+Premiazione Concorso per giovani illustratori 2024   
 
-Maggiori informazioni alla pagina
+Maggiori informazioni alla pagina   
 <https://www.aib.it/eventi/aib-61-bologna-childrens-book-fair/>.
 
 
@@ -188,11 +185,11 @@ https://aibnotizie.aib.it/pronti-si-parte-la-proposta-formativa-di-aib-lombardia
 
 Cordialmente, la Segreteria nazionale
 
-Associazione Italiana Biblioteche <https://www.aib.it>
-Viale Castro Pretorio, 105
-00185 Roma
-tel. +39 06 4463532 ::: fax +39 06 4441139
-Facebook ::: www.facebook.com/associazioneitalianabiblioteche/
-X  ::: www.twitter.com/aib_it
+Associazione Italiana Biblioteche <https://www.aib.it>   
+Viale Castro Pretorio, 105   
+00185 Roma   
+tel. +39 06 4463532 ::: fax +39 06 4441139   
+Facebook ::: www.facebook.com/associazioneitalianabiblioteche/   
+X  ::: www.twitter.com/aib_it   
 
 Newsletter a cura di Agnese Cargini
