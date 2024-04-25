@@ -2,9 +2,7 @@
 
 ![logo aib](https://gbergamin.github.io/news/logo.png)
 
-## AIB Newsletter n. 5 del 8/04/2024
-
----
+# AIB Newsletter n. 5 del 8/04/2024
 
 ### SOMMARIO
 #### 1. L'AIB alla Bologna Children's Book fair. 8-11 aprile
