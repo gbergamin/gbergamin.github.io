@@ -1,11 +1,11 @@
 ![logo AIB](https://gbergamin.github.io/news/logo.png)
 
 
-# Newsletter n. 345 del 23 giugno 2025
+## Newsletter n. 345 del 23 giugno 2025
 
 ---
 
-## È disponibile una nuova newletter
+### È disponibile una nuova newletter
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor   
 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,    
@@ -26,14 +26,14 @@ The quick **brown** fox jumped over the lazy dog.
 
 
 ---
-## altra notizia
+## Altra notizia
 
 <img src = "https://www.aib.it/wp-content/uploads/2024/04/banner-sito-aib-san-jordi-1.jpg" width="600">
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor   
 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,    
 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu    
+Duis aute irure dolor in [reprehenderit in voluptate](https://www.aib.it) velit esse cillum dolore eu    
 fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,    
 sunt in culpa qui officia deserunt mollit anim id est laborum
 
