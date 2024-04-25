@@ -50,7 +50,7 @@ Istat e AIB Emilia-Romagna in un dialogo costruttivo tra innovazione e
 tradizione  
 
 * 11 aprile ore 11 - Stand AIB (Padiglione 26 numero B26)   
-Premiazione Concorso per giovani illustratori 2024   
+*Premiazione Concorso per giovani illustratori 2024*   
 
 
 [🔗](https://www.aib.it/eventi/aib-61-bologna-childrens-book-fair/)
