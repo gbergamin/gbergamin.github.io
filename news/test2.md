@@ -61,14 +61,14 @@ Maggiori informazioni alla pagina
 #### 2. Soddisfazione per i risultati delle elezioni EBLIDA
 
 
-L’AIB esprime soddisfazione per i risultati delle recenti elezioni di
-EBLIDA in particolare per l’elezione nel Comitato esecutivo 2024-2027
-della nostra Associata Liu Palmieri.
-Liu Palmieri succede a Valentina Bondesan, che conclude la sua
-presenza in EBLIDA. A lei va il nostro ringraziamento per il grande
-impegno profuso e a Liu il nostro più grande augurio per un proficuo
+L’AIB esprime soddisfazione per i risultati delle recenti elezioni di   
+EBLIDA in particolare per l’elezione nel Comitato esecutivo 2024-2027   
+della nostra Associata Liu Palmieri.   
+Liu Palmieri succede a Valentina Bondesan, che conclude la sua   
+presenza in EBLIDA. A lei va il nostro ringraziamento per il grande   
+impegno profuso e a Liu il nostro più grande augurio per un proficuo   
 lavoro.
-Il testo è disponibile alla pagina
+Il testo è disponibile alla pagina   
 <https://www.aib.it/notizie/soddisfazione-risultati-elezioni-eblida-2/>.
 
 
@@ -77,31 +77,30 @@ Il testo è disponibile alla pagina
 #### 3. L’AIB sostiene Il Maggio dei Libri edizione 2024
 
 
-L'AIB, come di consueto, sostiene il Maggio dei libri 2024 promosso
-dal Cepell, che si svolgerà dal 23 aprile, Giornata mondiale del libro e
-del diritto d’autore indetta dall’UNESCO, al 31 maggio.
-In questa occasione, l'AIB propone un segnalibro
-<https://www.aib.it/notizie/segnalibro-giornata-mondiale-libro-2024/>
-da stampare e
-consegnare a tutti gli utenti per sottolineare che l'accesso alla
-lettura è un diritto di tutti.
-Maggiori informazioni sono disponibili alla pagina
-<https://www.aib.it/aib-sostiene-maggio-libri-2024>.
+L'AIB, come di consueto, sostiene il Maggio dei libri 2024 promosso   
+dal Cepell, che si svolgerà dal 23 aprile, Giornata mondiale del libro e    
+del diritto d’autore indetta dall’UNESCO, al 31 maggio.   
+In questa occasione, l'AIB propone un segnalibro   
+<https://www.aib.it/notizie/segnalibro-giornata-mondiale-libro-2024/>   
+da stampare e   
+consegnare a tutti gli utenti per sottolineare che l'accesso alla   
+lettura è un diritto di tutti.   
+Maggiori informazioni sono disponibili alla pagina   
+<https://www.aib.it/aib-sostiene-maggio-libri-2024>.    
 
 
 
 
-#### 4. Biblioteche in movimento: XXXII giornata delle biblioteche
-lombarde. Milano, 13 aprile
+#### 4. Biblioteche in movimento: XXXII giornata delle biblioteche lombarde. Milano, 13 aprile
 
 
-Anche quest’anno torna la Giornata delle biblioteche lombarde e nella
-sua XXXII edizione, l’evento sarà dedicato alle “biblioteche in
-movimento”, ovvero all’esposizione di progetti innovativi intrapresi
-da biblioteche lombarde di diversa tipologia e area geografica.
-L'appuntamento è in programma il 13 aprile ore 9 presso la Società
-Umanitaria di Milano.
-Maggiori informazioni alla pagina
+Anche quest’anno torna la Giornata delle biblioteche lombarde e nella   
+sua XXXII edizione, l’evento sarà dedicato alle “biblioteche in   
+movimento”, ovvero all’esposizione di progetti innovativi intrapresi   
+da biblioteche lombarde di diversa tipologia e area geografica.   
+L'appuntamento è in programma il 13 aprile ore 9 presso la Società   
+Umanitaria di Milano.   
+Maggiori informazioni alla pagina   
 <https://www.aib.it/eventi/biblioteche-in-movimento/>.
 
 
@@ -110,43 +109,41 @@ Maggiori informazioni alla pagina
 #### 5. IFLA Webinar *AI and the future of digital preservation*. Online, 18 giugno
 
 
-Segnaliamo il webinar “AI and the future of digital preservation”
-promosso da IFLA Information Technology Section, Artificial
-Intelligence Special Interest Group e IFLA Preservation and
-Conservation Section.
-E' possibile sottoporre l'abstract del proprio paper entro il 19 aprile.
-Maggiori informazioni alla pagina
+Segnaliamo il webinar “AI and the future of digital preservation”   
+promosso da IFLA Information Technology Section, Artificial   
+Intelligence Special Interest Group e IFLA Preservation and   
+Conservation Section.   
+E' possibile sottoporre l'abstract del proprio paper entro il 19 aprile.   
+Maggiori informazioni alla pagina   
 <https://www.ifla.org/news/webinar-ai-and-the-future-of-digital-preservation-call-for-proposals/>.
 
 
 ---
 
-#### 6. Summer School in Web and Social Media Archiving and Preservation.
-Online, 17-21 giugno
+#### 6. Summer School in Web and Social Media Archiving and Preservation. Online, 17-21 giugno
 
 
-L'AIB ha concesso il patrocinio alla IV edizione della Summer School
-in Web and Social Media Archiving and Preservation organizzata
-dall'Università di Bologna in programma dal 17 al 21 giugno. Agli
-iscritti AIB è riservata una quota di iscrizione agevolata.
-Maggiori informazioni alla pagina
+L'AIB ha concesso il patrocinio alla IV edizione della Summer School   
+in Web and Social Media Archiving and Preservation organizzata   
+dall'Università di Bologna in programma dal 17 al 21 giugno. Agli   
+iscritti AIB è riservata una quota di iscrizione agevolata.   
+Maggiori informazioni alla pagina   
 <https://site.unibo.it/web-and-social-media-archiving-and-preservation/it>.
 
 
 ---
 
-#### 7. Summer School "La Digital Library: evoluzione, strutture,
-progetti". Scadenza 30 aprile
+#### 7. Summer School "La Digital Library: evoluzione, strutture, progetti". Scadenza 30 aprile
 
 
-Dal 3 al 7 giugno 2024 si terrà la nona edizione della Summer school
-promossa dall'Università di Bologna (la terza incentrata su La Digital
-Library: evoluzione, strutture, progetti).
-La formazione in presenza a Ravenna si articolerà in moduli di
-approfondimento teorico e in una parte laboratoriale pratica.
-Le iscrizioni sono aperte fino al 30 aprile 2024.
-Sono previste quote agevolate di iscrizione agli iscritti AIB.
-Per informazioni consultare la pagina
+Dal 3 al 7 giugno 2024 si terrà la nona edizione della Summer school   
+promossa dall'Università di Bologna (la terza incentrata su La Digital   
+Library: evoluzione, strutture, progetti).   
+La formazione in presenza a Ravenna si articolerà in moduli di   
+approfondimento teorico e in una parte laboratoriale pratica.   
+Le iscrizioni sono aperte fino al 30 aprile 2024.   
+Sono previste quote agevolate di iscrizione agli iscritti AIB.   
+Per informazioni consultare la pagina   
 <https://site.unibo.it/digital-library-evoluzione-strutture-progetti/it>.
 
 
@@ -155,14 +152,14 @@ Per informazioni consultare la pagina
 #### 8. Premio Maria A. Abenante. Posticipata scadenza, 31 maggio
 
 
-La scadenza del bando 2024 del Premio Maria A. Abenante è stata
+La scadenza del bando 2024 del Premio Maria A. Abenante è stata   
 posticipata al 31 maggio.
-Il Premio vede l'individuazione di un progetto avente la finalità di
-promuovere l’inclusione nelle sue diverse declinazioni con riferimento
-ad attività e servizi innovativi, svolti nell’ambito di biblioteche di
-qualunque natura e tipologia, finalizzati a valorizzarne il ruolo
-sociale e culturale e la dimensione inclusiva.
-Maggiori informazioni sono disponibili alla pagina
+Il Premio vede l'individuazione di un progetto avente la finalità di   
+promuovere l’inclusione nelle sue diverse declinazioni con riferimento   
+ad attività e servizi innovativi, svolti nell’ambito di biblioteche di   
+qualunque natura e tipologia, finalizzati a valorizzarne il ruolo   
+sociale e culturale e la dimensione inclusiva.   
+Maggiori informazioni sono disponibili alla pagina   
 <https://www.aib.it/concorsi/premio-maria-a-abenante/>.
 
 
@@ -173,11 +170,10 @@ Maggiori informazioni sono disponibili alla pagina
 
 Sono disponibili su AIB notizie gli articoli:
 
-- 4 passi in biblioteca….si parte! / Donatella Bellardini e Giulio Marconi
-<https://aibnotizie.aib.it/4-passi-in-biblioteca-si-parte/>
-- Pronti, si parte! La proposta formativa di AIB Lombardia per il 2024
-/ Roberta Moro /
-https://aibnotizie.aib.it/pronti-si-parte-la-proposta-formativa-di-aib-lombardia-per-il-2024/
+* [4 passi in biblioteca….si parte!](https://aibnotizie.aib.it/4-passi-in-biblioteca-si-parte/) / Donatella Bellardini e Giulio Marconi   
+
+* [Pronti, si parte! La proposta formativa di AIB Lombardia per il 2024](https://aibnotizie.aib.it/pronti-si-parte-la-proposta-formativa-di-aib-lombardia-per-il-2024/) / Roberta Moro 
+
 
 
 ---
