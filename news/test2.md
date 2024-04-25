@@ -55,7 +55,7 @@ tradizione
 *Premiazione Concorso per giovani illustratori 2024*   
 
 
-[🔗](https://www.aib.it/eventi/aib-61-bologna-childrens-book-fair/)
+Il testo è disponibile: [🔗](https://www.aib.it/eventi/aib-61-bologna-childrens-book-fair/)
 
 
 ---
@@ -70,9 +70,7 @@ Liu Palmieri succede a Valentina Bondesan, che conclude la sua
 presenza in EBLIDA. A lei va il nostro ringraziamento per il grande   
 impegno profuso e a Liu il nostro più grande augurio per un proficuo   
 lavoro.
-Il testo è disponibile alla pagina
-
-[🔗](https://www.aib.it/notizie/soddisfazione-risultati-elezioni-eblida-2/)
+Il testo è disponibile: [🔗](https://www.aib.it/notizie/soddisfazione-risultati-elezioni-eblida-2/)
 
 
 ---
@@ -86,9 +84,7 @@ del diritto d’autore indetta dall’UNESCO, al 31 maggio.
 In questa occasione, l'AIB propone un [segnalibro da stampare](https://www.aib.it/notizie/segnalibro-giornata-mondiale-libro-2024/)   
 e consegnare a tutti gli utenti per sottolineare che l'accesso alla   
 lettura è un diritto di tutti.   
-Maggiori informazioni sono disponibili alla pagina
-
-[🔗](https://www.aib.it/aib-sostiene-maggio-libri-2024)    
+Maggiori informazioni sono disponibili: [🔗](https://www.aib.it/aib-sostiene-maggio-libri-2024)    
 
 
 ---
@@ -102,9 +98,7 @@ movimento”, ovvero all’esposizione di progetti innovativi intrapresi
 da biblioteche lombarde di diversa tipologia e area geografica.   
 L'appuntamento è in programma il 13 aprile ore 9 presso la Società   
 Umanitaria di Milano.   
-Maggiori informazioni alla pagina   
-
-[🔗](https://www.aib.it/eventi/biblioteche-in-movimento/)
+Maggiori informazioni: [🔗](https://www.aib.it/eventi/biblioteche-in-movimento/)
 
 
 ---
@@ -118,7 +112,7 @@ Intelligence Special Interest Group e IFLA Preservation and
 Conservation Section*.   
 E' possibile sottoporre l'abstract del proprio paper entro il 19 aprile.
 
-[🔗](https://www.ifla.org/news/webinar-ai-and-the-future-of-digital-preservation-call-for-proposals/)
+Maggiori informazioni: [🔗](https://www.ifla.org/news/webinar-ai-and-the-future-of-digital-preservation-call-for-proposals/)
 
 
 ---
@@ -131,7 +125,7 @@ in Web and Social Media Archiving and Preservation organizzata
 dall'Università di Bologna in programma dal 17 al 21 giugno. Agli   
 iscritti AIB è riservata una quota di iscrizione agevolata.   
 
-[🔗](https://site.unibo.it/web-and-social-media-archiving-and-preservation/it)
+Maggiori informazioni: [🔗](https://site.unibo.it/web-and-social-media-archiving-and-preservation/it)
 
 
 ---
@@ -147,7 +141,7 @@ approfondimento teorico e in una parte laboratoriale pratica.
 Le iscrizioni sono aperte fino al 30 aprile 2024.   
 Sono previste quote agevolate di iscrizione agli iscritti AIB.   
 
-[🔗](https://site.unibo.it/digital-library-evoluzione-strutture-progetti/it)
+Maggiori informazioni: [🔗](https://site.unibo.it/digital-library-evoluzione-strutture-progetti/it)
 
 
 ---
@@ -163,7 +157,7 @@ ad attività e servizi innovativi, svolti nell’ambito di biblioteche di
 qualunque natura e tipologia, finalizzati a valorizzarne il ruolo   
 sociale e culturale e la dimensione inclusiva.   
 
-[🔗](https://www.aib.it/concorsi/premio-maria-a-abenante/)
+Maggiori informazioni:  [🔗](https://www.aib.it/concorsi/premio-maria-a-abenante/)
 
 
 ---
