@@ -7,7 +7,7 @@
 ### SOMMARIO
 
 1. L'AIB alla Bologna Children's Book fair. 8-11 aprile
-2. Soddisfazione per i risultati delle elezioni EBLIDA 
+2. <a name="#2soddisfazioneperirisultatidelleelezionieblida">Soddisfazione per i risultati delle elezioni EBLIDA</a> 
 3. L’AIB sostiene Il Maggio dei Libri edizione 2024
 4. Biblioteche in movimento: XXXII giornata delle biblioteche lombarde.   
     Milano, 13 aprile
