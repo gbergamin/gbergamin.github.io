@@ -53,7 +53,7 @@ tradizione
 Premiazione Concorso per giovani illustratori 2024   
 
 
-[🔗](https://www.aib.it/eventi/aib-61-bologna-childrens-book-fair/)
+[Alla pagina 🔗](https://www.aib.it/eventi/aib-61-bologna-childrens-book-fair/)
 
 
 ---
