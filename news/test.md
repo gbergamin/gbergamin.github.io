@@ -5,7 +5,7 @@
 
 ---
 
-### È disponibile una nuova newletter
+### 📚 È disponibile una nuova newsletter
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor   
 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,    
@@ -26,7 +26,7 @@ The quick **brown** fox jumped over the lazy dog.
 
 
 ---
-### Altra notizia
+### 📚 Altra notizia
 
 <img src = "https://www.aib.it/wp-content/uploads/2024/04/banner-sito-aib-san-jordi-1.jpg" width="600">
 
