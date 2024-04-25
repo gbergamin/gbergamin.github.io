@@ -36,16 +36,16 @@ biblioteche ragazzi della Romagna, colpite dall’alluvione di maggio
 Ricordiamo gli appuntamenti AIB e NPL:
 
 * 9 aprile ore 14.00 - 16,00 Sala Notturno   
-1.2.3. primi passi tra libri e numeri alla conquista del mondo   
+*1.2.3. primi passi tra libri e numeri alla conquista del mondo*   
 A cura Nati per Leggere Emilia Romagna e Osservatorio editoriale NpL
 
 * 9 aprile ore 15.45 - 17.45 Sala Bolero   
-FIDATI DI NOI! Adolescenti, lettura e biblioteche   
+*FIDATI DI NOI! Adolescenti, lettura e biblioteche*   
 a cura delle Commissione Nazionale AIB Biblioteche e servizi per   
 ragazze e ragazzi
 
 * 10 aprile ore 14,30 Sala Ronda - Centro Servizi 1° piano Blocco C   
-La statistica unisce e divide le nuove generazioni   
+*La statistica unisce e divide le nuove generazioni*   
 Istat e AIB Emilia-Romagna in un dialogo costruttivo tra innovazione e   
 tradizione  
 
@@ -53,7 +53,7 @@ tradizione
 Premiazione Concorso per giovani illustratori 2024   
 
 
-[Alla pagina 🔗](https://www.aib.it/eventi/aib-61-bologna-childrens-book-fair/)
+[🔗](https://www.aib.it/eventi/aib-61-bologna-childrens-book-fair/)
 
 
 ---
@@ -68,7 +68,8 @@ Liu Palmieri succede a Valentina Bondesan, che conclude la sua
 presenza in EBLIDA. A lei va il nostro ringraziamento per il grande   
 impegno profuso e a Liu il nostro più grande augurio per un proficuo   
 lavoro.
-Il testo è disponibile alla pagina   
+Il testo è disponibile alla pagina
+
 [🔗](https://www.aib.it/notizie/soddisfazione-risultati-elezioni-eblida-2/)
 
 
@@ -80,13 +81,12 @@ Il testo è disponibile alla pagina
 L'AIB, come di consueto, sostiene il Maggio dei libri 2024 promosso   
 dal Cepell, che si svolgerà dal 23 aprile, Giornata mondiale del libro e    
 del diritto d’autore indetta dall’UNESCO, al 31 maggio.   
-In questa occasione, l'AIB propone un segnalibro   
-<https://www.aib.it/notizie/segnalibro-giornata-mondiale-libro-2024/>   
-da stampare e   
-consegnare a tutti gli utenti per sottolineare che l'accesso alla   
+In questa occasione, l'AIB propone un [segnalibro da stampare](https://www.aib.it/notizie/segnalibro-giornata-mondiale-libro-2024/)   
+e consegnare a tutti gli utenti per sottolineare che l'accesso alla   
 lettura è un diritto di tutti.   
-Maggiori informazioni sono disponibili alla pagina   
-<https://www.aib.it/aib-sostiene-maggio-libri-2024>.    
+Maggiori informazioni sono disponibili alla pagina
+
+[🔗](https://www.aib.it/aib-sostiene-maggio-libri-2024)    
 
 
 
@@ -101,7 +101,8 @@ da biblioteche lombarde di diversa tipologia e area geografica.
 L'appuntamento è in programma il 13 aprile ore 9 presso la Società   
 Umanitaria di Milano.   
 Maggiori informazioni alla pagina   
-<https://www.aib.it/eventi/biblioteche-in-movimento/>.
+
+[🔗](https://www.aib.it/eventi/biblioteche-in-movimento/)
 
 
 ---
@@ -109,13 +110,13 @@ Maggiori informazioni alla pagina
 #### 5. IFLA Webinar *AI and the future of digital preservation*. Online, 18 giugno
 
 
-Segnaliamo il webinar “AI and the future of digital preservation”   
-promosso da IFLA Information Technology Section, Artificial   
+Segnaliamo il webinar *AI and the future of digital preservation*   
+promosso da *IFLA Information Technology Section, Artificial   
 Intelligence Special Interest Group e IFLA Preservation and   
-Conservation Section.   
-E' possibile sottoporre l'abstract del proprio paper entro il 19 aprile.   
-Maggiori informazioni alla pagina   
-<https://www.ifla.org/news/webinar-ai-and-the-future-of-digital-preservation-call-for-proposals/>.
+Conservation Section*.   
+E' possibile sottoporre l'abstract del proprio paper entro il 19 aprile.
+
+[🔗](https://www.ifla.org/news/webinar-ai-and-the-future-of-digital-preservation-call-for-proposals/)
 
 
 ---
@@ -127,8 +128,8 @@ L'AIB ha concesso il patrocinio alla IV edizione della Summer School
 in Web and Social Media Archiving and Preservation organizzata   
 dall'Università di Bologna in programma dal 17 al 21 giugno. Agli   
 iscritti AIB è riservata una quota di iscrizione agevolata.   
-Maggiori informazioni alla pagina   
-<https://site.unibo.it/web-and-social-media-archiving-and-preservation/it>.
+
+[🔗](https://site.unibo.it/web-and-social-media-archiving-and-preservation/it)
 
 
 ---
@@ -137,14 +138,14 @@ Maggiori informazioni alla pagina
 
 
 Dal 3 al 7 giugno 2024 si terrà la nona edizione della Summer school   
-promossa dall'Università di Bologna (la terza incentrata su La Digital   
-Library: evoluzione, strutture, progetti).   
+promossa dall'Università di Bologna (la terza incentrata su *La Digital   
+Library: evoluzione, strutture, progetti*).   
 La formazione in presenza a Ravenna si articolerà in moduli di   
 approfondimento teorico e in una parte laboratoriale pratica.   
 Le iscrizioni sono aperte fino al 30 aprile 2024.   
 Sono previste quote agevolate di iscrizione agli iscritti AIB.   
-Per informazioni consultare la pagina   
-<https://site.unibo.it/digital-library-evoluzione-strutture-progetti/it>.
+
+[🔗](https://site.unibo.it/digital-library-evoluzione-strutture-progetti/it)
 
 
 ---
@@ -159,8 +160,8 @@ promuovere l’inclusione nelle sue diverse declinazioni con riferimento
 ad attività e servizi innovativi, svolti nell’ambito di biblioteche di   
 qualunque natura e tipologia, finalizzati a valorizzarne il ruolo   
 sociale e culturale e la dimensione inclusiva.   
-Maggiori informazioni sono disponibili alla pagina   
-<https://www.aib.it/concorsi/premio-maria-a-abenante/>.
+
+[🔗](https://www.aib.it/concorsi/premio-maria-a-abenante/)
 
 
 ---
