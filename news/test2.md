@@ -112,7 +112,7 @@ Maggiori informazioni alla pagina
 #### 5. IFLA Webinar *AI and the future of digital preservation*. Online, 18 giugno
 
 
-Segnaliamo il webinar *AI and the future of digital preservation*   
+Segnaliamo il webinar *AI and the future of digital preservation*      
 promosso da *IFLA Information Technology Section, Artificial   
 Intelligence Special Interest Group e IFLA Preservation and   
 Conservation Section*.   
