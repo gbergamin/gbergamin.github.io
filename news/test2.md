@@ -179,13 +179,13 @@ Sono disponibili su AIB notizie gli articoli:
 ---
 
 
-Cordialmente, la Segreteria nazionale
+*Cordialmente, la Segreteria nazionale*
 
-Associazione Italiana Biblioteche <https://www.aib.it>   
-Viale Castro Pretorio, 105   
-00185 Roma   
-tel. +39 06 4463532 ::: fax +39 06 4441139   
-Facebook ::: www.facebook.com/associazioneitalianabiblioteche/   
-X  ::: www.twitter.com/aib_it   
+*[Associazione Italiana Biblioteche](https://www.aib.it)*   
+*Viale Castro Pretorio, 105*   
+*00185 Roma*   
+*tel. +39 06 4463532 ::: fax +39 06 4441139*   
+*Facebook ::: www.facebook.com/associazioneitalianabiblioteche/*   
+*X  ::: www.twitter.com/aib_it*   
 
-Newsletter a cura di Agnese Cargini
+*Newsletter a cura di Agnese Cargini*
