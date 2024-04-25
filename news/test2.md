@@ -91,7 +91,7 @@ Maggiori informazioni sono disponibili alla pagina
 [🔗](https://www.aib.it/aib-sostiene-maggio-libri-2024)    
 
 
-
+---
 
 #### 4. Biblioteche in movimento: XXXII giornata delle biblioteche lombarde. Milano, 13 aprile
 
@@ -188,7 +188,7 @@ Sono disponibili su AIB notizie gli articoli:
 *Viale Castro Pretorio, 105*   
 *00185 Roma*   
 *tel. +39 06 4463532 ::: fax +39 06 4441139*   
-*Facebook ::: www.facebook.com/associazioneitalianabiblioteche/*   
-*X  ::: www.twitter.com/aib_it*   
+*[Facebook](https://www.facebook.com/associazioneitalianabiblioteche/)*   
+*[X](https://www.twitter.com/aib_it)*   
 
 *Newsletter a cura di Agnese Cargini*
