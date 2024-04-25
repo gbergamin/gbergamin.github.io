@@ -9,12 +9,15 @@
 1. L'AIB alla Bologna Children's Book fair. 8-11 aprile
 2.  Soddisfazione per i risultati delle elezioni EBLIDA
 3. L’AIB sostiene Il Maggio dei Libri edizione 2024
-4. Biblioteche in movimento: XXXII giornata delle biblioteche lombarde. Milano, 13 aprile
-5. IFLA Webinar “AI and the future of digital preservation”. Online, 18 giugno
-6. Summer School in Web and Social Media Archiving and Preservation. Online, 17-21 giugno
-7. Summer School "La Digital Library: evoluzione, strutture, progetti". Scadenza 30 aprile
-8. Premio Maria A. Abenante. Posticipata scadenza, 31 maggio
-9. AIB notizie
+4. Biblioteche in movimento: XXXII giornata delle biblioteche lombarde.   
+    Milano, 13 aprile
+6. IFLA Webinar “AI and the future of digital preservation”. Online, 18 giugno
+7. Summer School in Web and Social Media Archiving and Preservation.   
+   Online, 17-21 giugno
+9. Summer School "La Digital Library: evoluzione, strutture, progetti".   
+   Scadenza 30 aprile
+11. Premio Maria A. Abenante. Posticipata scadenza, 31 maggio
+12. AIB notizie
 
 ---
 
