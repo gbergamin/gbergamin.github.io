@@ -3,8 +3,8 @@
 ![logo aib](https://gbergamin.github.io/news/logo.png)
 
 ## AIB Newsletter n. 5 del 8/04/2024
-
 *[disponibile anche come pagina html](https://gbergamin.github.io/news/newsletter.html)*
+
 ---
 ### SOMMARIO
 
