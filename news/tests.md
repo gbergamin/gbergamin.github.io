@@ -15,7 +15,7 @@
 
 [📚 4. Biblioteche in movimento: XXXII giornata delle biblioteche lombarde. Milano, 13 aprile](#-4-biblioteche-in-movimento-xxxii-giornata-delle-biblioteche-lombarde-milano-13-aprile)
 
-[📚 5. IFLA Webinar *AI and the future of digital preservation*. Online, 18 giugno](#-5-ifla-webinar-ai-and-the-future-of-digital-preservation-online-18-giugno)
+[📚 5. IFLA Webinar *AI and the future of digital preservation*. Online, 18 giugno](#5iflawebinaraiandthefutureofdigitalpreservationonline18giugno)
 
 [📚 6. Summer School in Web and Social Media Archiving and Preservation. Online, 17-21 giugno](#-6-summer-school-in-web-and-social-media-archiving-and-preservation-online-17-21-giugno)
 
