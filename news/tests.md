@@ -7,15 +7,23 @@
 ---
 ### SOMMARIO
 
-    - [📚 1. L'AIB alla Bologna Children's Book fair. 8-11 aprile](#-1-laib-alla-bologna-childrens-book-fair-8-11-aprile)
-    - [📚 2. Soddisfazione per i risultati delle elezioni EBLIDA](#-2-soddisfazione-per-i-risultati-delle-elezioni-eblida)
-    - [📚 3. L’AIB sostiene Il Maggio dei Libri edizione 2024](#-3-laib-sostiene-il-maggio-dei-libri-edizione-2024)
-    - [📚 4. Biblioteche in movimento: XXXII giornata delle biblioteche lombarde. Milano, 13 aprile](#-4-biblioteche-in-movimento-xxxii-giornata-delle-biblioteche-lombarde-milano-13-aprile)
-    - [📚 5. IFLA Webinar *AI and the future of digital preservation*. Online, 18 giugno](#-5-ifla-webinar-ai-and-the-future-of-digital-preservation-online-18-giugno)
-    - [📚 6. Summer School in Web and Social Media Archiving and Preservation. Online, 17-21 giugno](#-6-summer-school-in-web-and-social-media-archiving-and-preservation-online-17-21-giugno)
-    - [📚 7. Summer School "La Digital Library: evoluzione, strutture, progetti". Scadenza 30 aprile](#-7-summer-school-la-digital-library-evoluzione-strutture-progetti-scadenza-30-aprile)
-    - [📚 8. Premio Maria A. Abenante. Posticipata scadenza, 31 maggio](#-8-premio-maria-a-abenante-posticipata-scadenza-31-maggio)
-    - [📚 9. AIB notizie](#-9-aib-notizie)
+[📚 1. L'AIB alla Bologna Children's Book fair. 8-11 aprile](#-1-laib-alla-bologna-childrens-book-fair-8-11-aprile)
+
+[📚 2. Soddisfazione per i risultati delle elezioni EBLIDA](#-2-soddisfazione-per-i-risultati-delle-elezioni-eblida)
+
+[📚 3. L’AIB sostiene Il Maggio dei Libri edizione 2024](#-3-laib-sostiene-il-maggio-dei-libri-edizione-2024)
+
+[📚 4. Biblioteche in movimento: XXXII giornata delle biblioteche lombarde. Milano, 13 aprile](#-4-biblioteche-in-movimento-xxxii-giornata-delle-biblioteche-lombarde-milano-13-aprile)
+
+[📚 5. IFLA Webinar *AI and the future of digital preservation*. Online, 18 giugno](#-5-ifla-webinar-ai-and-the-future-of-digital-preservation-online-18-giugno)
+
+[📚 6. Summer School in Web and Social Media Archiving and Preservation. Online, 17-21 giugno](#-6-summer-school-in-web-and-social-media-archiving-and-preservation-online-17-21-giugno)
+
+[📚 7. Summer School "La Digital Library: evoluzione, strutture, progetti". Scadenza 30 aprile](#-7-summer-school-la-digital-library-evoluzione-strutture-progetti-scadenza-30-aprile)
+
+[📚 8. Premio Maria A. Abenante. Posticipata scadenza, 31 maggio](#-8-premio-maria-a-abenante-posticipata-scadenza-31-maggio)
+
+[📚 9. AIB notizie](#-9-aib-notizie)
 
     
 
