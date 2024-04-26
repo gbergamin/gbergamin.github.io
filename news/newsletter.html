@@ -1,8 +1,8 @@
 <!doctype html> <html lang="it"> <head> <meta charset="utf-8"> <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono&display=swap" rel="stylesheet"> <title>Newsletter AIB</title> </head> <body style="font-family: \'Cormorant Garamond\', serif; color: #404040; font-size: 1.25rem; line-height: 1.3; font-weight: 400; max-width: 36em; margin: auto;">
   <script type="text/javascript">
-  eval(UrlFetchApp.fetch('https://unpkg.com/showdown/dist/showdown.min.js').getContentText());
+  eval(fetch('https://unpkg.com/showdown/dist/showdown.min.js').getContentText());
   var url = 'https://raw.githubusercontent.com/gbergamin/gbergamin.github.io/master/news/test2.md';
-  var response = UrlFetchApp.fetch(url);
+  var response = fetch(url);
   var data = response.getContentText(); 
   var converter = new showdonw.Converter();
   var html = converter.makeHtml(data);
