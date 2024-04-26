@@ -6,9 +6,10 @@
         <title>Newsletter AIB</title> 
         
     </head> 
-     <body style="font-family: \'Cormorant Garamond\', serif; color: #404040; font-size: 1.25rem; line-height: 1.3; font-weight: 400; max-width: 36em; margin: auto;">
-    <p>cavallo a dondolo</p>
+    
+    
     <script>
+        const preBody = '<body style="font-family: \'Cormorant Garamond\', serif; color: #404040; font-size: 1.25rem; line-height: 1.3; font-weight: 400; max-width: 36em; margin: auto;">';
         const sheetId = "18Znh-iKUkc4qnSiKzzCymCodC1isYluOB6YZQ7eu_Qk";
         const sheetGid = "0";
         const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json&tq&gid=${sheetGid}`;
@@ -22,7 +23,7 @@
                 // Access the data rows
                 const deposito  = json["table"]["rows"][0]["c"][0]["v"];
                 console.log(deposito);
-                document.innerHTML(deposito);
+                document.write(preBody + deposito);
 
                 // Do something with the data
                 
