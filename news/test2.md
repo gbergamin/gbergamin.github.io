@@ -7,7 +7,7 @@
 ### SOMMARIO
 
 1. L'AIB alla Bologna Children's Book fair. 8-11 aprile
-2. <a href name="#2soddisfazioneperirisultatidelleelezionieblida">Soddisfazione per i risultati delle elezioni EBLIDA</a> 
+2. Soddisfazione per i risultati delle elezioni EBLIDA
 3. L’AIB sostiene Il Maggio dei Libri edizione 2024
 4. Biblioteche in movimento: XXXII giornata delle biblioteche lombarde.   
     Milano, 13 aprile
@@ -19,7 +19,7 @@
 11. Premio Maria A. Abenante. Posticipata scadenza, 31 maggio
 12. AIB notizie
 
-    [toc]
+    
 
 ---
 
@@ -27,10 +27,7 @@
 #### 📚 1. L'AIB alla Bologna Children's Book fair. 8-11 aprile
 
 
-L'AIB vi aspetta alla Bologna Children's Book fair da oggi 8 aprile a   
-giovedì 11 con uno nuovo stand al Padiglione 26 numero B26, presso cui   
-saranno esposte le novità editoriali dell’AIB e le opere in gara al   
-Concorso internazionale per giovani illustratori "Biblioteca, a   
+L'AIB vi aspetta alla Bologna Children's Book fair da oggi 8 aprile a giovedì 11 con uno nuovo stand al Padiglione 26 numero B26, presso cui saranno esposte le novità editoriali dell’AIB e le opere in gara al Concorso internazionale per giovani illustratori "Biblioteca, a   
 zig-zag tra le frontiere" organizzato dall’AIB Emilia Romagna che   
 inoltre promuove l'iniziativa "Reading over the flood" proponendo agli   
 editori presenti in Fiera di contribuire alla ricostruzione delle   
