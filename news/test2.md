@@ -9,13 +9,10 @@
 1. L'AIB alla Bologna Children's Book fair. 8-11 aprile
 2. Soddisfazione per i risultati delle elezioni EBLIDA
 3. L’AIB sostiene Il Maggio dei Libri edizione 2024
-4. Biblioteche in movimento: XXXII giornata delle biblioteche lombarde.   
-    Milano, 13 aprile
+4. Biblioteche in movimento: XXXII giornata delle biblioteche lombarde. Milano, 13 aprile
 6. IFLA Webinar *AI and the future of digital preservation*. Online, 18 giugno
-7. Summer School in Web and Social Media Archiving and Preservation.   
-   Online, 17-21 giugno
-9. Summer School *La Digital Library: evoluzione, strutture, progetti*.   
-   Scadenza 30 aprile
+7. Summer School in Web and Social Media Archiving and Preservation. Online, 17-21 giugno
+9. Summer School *La Digital Library: evoluzione, strutture, progetti*. Scadenza 30 aprile
 11. Premio Maria A. Abenante. Posticipata scadenza, 31 maggio
 12. AIB notizie
 
@@ -27,12 +24,7 @@
 #### 📚 1. L'AIB alla Bologna Children's Book fair. 8-11 aprile
 
 
-L'AIB vi aspetta alla Bologna Children's Book fair da oggi 8 aprile a giovedì 11 con uno nuovo stand al Padiglione 26 numero B26, presso cui saranno esposte le novità editoriali dell’AIB e le opere in gara al Concorso internazionale per giovani illustratori "Biblioteca, a   
-zig-zag tra le frontiere" organizzato dall’AIB Emilia Romagna che   
-inoltre promuove l'iniziativa "Reading over the flood" proponendo agli   
-editori presenti in Fiera di contribuire alla ricostruzione delle   
-biblioteche ragazzi della Romagna, colpite dall’alluvione di maggio   
-2023.
+L'AIB vi aspetta alla Bologna Children's Book fair da oggi 8 aprile a giovedì 11 con uno nuovo stand al Padiglione 26 numero B26, presso cui saranno esposte le novità editoriali dell’AIB e le opere in gara al Concorso internazionale per giovani illustratori "Biblioteca, a zig-zag tra le frontiere" organizzato dall’AIB Emilia Romagna che inoltre promuove l'iniziativa "Reading over the flood" proponendo agli editori presenti in Fiera di contribuire alla ricostruzione delle biblioteche ragazzi della Romagna, colpite dall’alluvione di maggio 2023.
 
 Ricordiamo gli appuntamenti AIB e NPL:
 
@@ -47,8 +39,7 @@ ragazze e ragazzi
 
 * 10 aprile ore 14,30 Sala Ronda - Centro Servizi 1° piano Blocco C   
 *La statistica unisce e divide le nuove generazioni*   
-Istat e AIB Emilia-Romagna in un dialogo costruttivo tra innovazione e   
-tradizione  
+Istat e AIB Emilia-Romagna in un dialogo costruttivo tra innovazione e tradizione  
 
 * 11 aprile ore 11 - Stand AIB (Padiglione 26 numero B26)   
 *Premiazione Concorso per giovani illustratori 2024*   
@@ -62,13 +53,8 @@ Il testo è disponibile: [🔗](https://www.aib.it/eventi/aib-61-bologna-childre
 #### 📚 2. Soddisfazione per i risultati delle elezioni EBLIDA
 
 
-L’AIB esprime soddisfazione per i risultati delle recenti elezioni di   
-EBLIDA in particolare per l’elezione nel Comitato esecutivo 2024-2027   
-della nostra Associata Liu Palmieri.   
-Liu Palmieri succede a Valentina Bondesan, che conclude la sua   
-presenza in EBLIDA. A lei va il nostro ringraziamento per il grande   
-impegno profuso e a Liu il nostro più grande augurio per un proficuo   
-lavoro.
+L’AIB esprime soddisfazione per i risultati delle recenti elezioni di EBLIDA in particolare per l’elezione nel Comitato esecutivo 2024-2027 della nostra Associata Liu Palmieri.
+Liu Palmieri succede a Valentina Bondesan, che conclude la sua presenza in EBLIDA. A lei va il nostro ringraziamento per il grande impegno profuso e a Liu il nostro più grande augurio per un proficuo lavoro.
 Il testo è disponibile: [🔗](https://www.aib.it/notizie/soddisfazione-risultati-elezioni-eblida-2/)
 
 
@@ -77,12 +63,10 @@ Il testo è disponibile: [🔗](https://www.aib.it/notizie/soddisfazione-risulta
 #### 📚 3. L’AIB sostiene Il Maggio dei Libri edizione 2024
 
 
-L'AIB, come di consueto, sostiene il Maggio dei libri 2024 promosso   
-dal Cepell, che si svolgerà dal 23 aprile, Giornata mondiale del libro e    
-del diritto d’autore indetta dall’UNESCO, al 31 maggio.   
-In questa occasione, l'AIB propone un [segnalibro da stampare](https://www.aib.it/notizie/segnalibro-giornata-mondiale-libro-2024/)   
-e consegnare a tutti gli utenti per sottolineare che l'accesso alla   
-lettura è un diritto di tutti.   
+L'AIB, come di consueto, sostiene il Maggio dei libri 2024 promosso dal Cepell, che si svolgerà dal 23 aprile, Giornata mondiale del libro e del diritto d’autore indetta dall’UNESCO, al 31 maggio.
+
+In questa occasione, l'AIB propone un [segnalibro da stampare] (https://www.aib.it/notizie/segnalibro-giornata-mondiale-libro-2024/) e consegnare a tutti gli utenti per sottolineare che l'accesso alla lettura è un diritto di tutti.
+
 Maggiori informazioni sono disponibili: [🔗](https://www.aib.it/aib-sostiene-maggio-libri-2024)    
 
 
@@ -91,12 +75,8 @@ Maggiori informazioni sono disponibili: [🔗](https://www.aib.it/aib-sostiene-m
 #### 📚 4. Biblioteche in movimento: XXXII giornata delle biblioteche lombarde. Milano, 13 aprile
 
 
-Anche quest’anno torna la Giornata delle biblioteche lombarde e nella   
-sua XXXII edizione, l’evento sarà dedicato alle “biblioteche in   
-movimento”, ovvero all’esposizione di progetti innovativi intrapresi   
-da biblioteche lombarde di diversa tipologia e area geografica.   
-L'appuntamento è in programma il 13 aprile ore 9 presso la Società   
-Umanitaria di Milano.   
+Anche quest’anno torna la Giornata delle biblioteche lombarde e nella sua XXXII edizione, l’evento sarà dedicato alle “biblioteche in movimento”, ovvero all’esposizione di progetti innovativi intrapresi da biblioteche lombarde di diversa tipologia e area geografica.
+L'appuntamento è in programma il 13 aprile ore 9 presso la Società Umanitaria di Milano.   
 Maggiori informazioni: [🔗](https://www.aib.it/eventi/biblioteche-in-movimento/)
 
 
@@ -105,12 +85,8 @@ Maggiori informazioni: [🔗](https://www.aib.it/eventi/biblioteche-in-movimento
 #### 📚 5. IFLA Webinar *AI and the future of digital preservation*. Online, 18 giugno
 
 
-Segnaliamo il webinar *AI and the future of digital preservation*      
-promosso da *IFLA Information Technology Section, Artificial   
-Intelligence Special Interest Group e IFLA Preservation and   
-Conservation Section*.   
+Segnaliamo il webinar *AI and the future of digital preservation* promosso da *IFLA Information Technology Section, Artificial Intelligence Special Interest Group e IFLA Preservation and Conservation Section*.   
 E' possibile sottoporre l'abstract del proprio paper entro il 19 aprile.
-
 Maggiori informazioni: [🔗](https://www.ifla.org/news/webinar-ai-and-the-future-of-digital-preservation-call-for-proposals/)
 
 
