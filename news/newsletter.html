@@ -20,7 +20,7 @@
                 const json = JSON.parse(data.substring(47, data.length - 2));
 
                 // Access the data rows
-                const deposito  json["table"]["rows"][0]["c"][0]["v"];
+                const deposito = json["table"]["rows"][0]["c"][0]["v"];
                 
                 console.log(deposito);
                 document.body.innerHTML(deposito);
