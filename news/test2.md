@@ -68,7 +68,7 @@ L'AIB, come di consueto, sostiene il Maggio dei libri 2024 promosso dal Cepell, 
 
 In questa occasione, l'AIB propone un [segnalibro da stampare] (https://www.aib.it/notizie/segnalibro-giornata-mondiale-libro-2024/) e consegnare a tutti gli utenti per sottolineare che l'accesso alla lettura è un diritto di tutti.
 
-Maggiori informazioni sono disponibili: [🔗](https://www.aib.it/aib-sostiene-maggio-libri-2024)    
+Maggiori informazioni sono disponibili: [🔗](https://www.aib.it/notizie/aib-sostiene-maggio-libri-2024)    
 
 
 ---
