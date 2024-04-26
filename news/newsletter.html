@@ -5,14 +5,12 @@
   var response = UrlFetchApp.fetch(url);
   var data = response.getContentText(); 
   var converter = new showdonw.Converter();
-  var html = converter.makeHtml(data)
-  
-</script>
+  var html = converter.makeHtml(data);
+  document.write(html);
+  </script>
 </head> 
 <body>
- <script>
- document.write(html);
- </script>   
+    
 </body>
   
 </html>
