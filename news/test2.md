@@ -64,7 +64,7 @@ Il testo è disponibile: [🔗](https://www.aib.it/notizie/soddisfazione-risulta
 
 #### 📚 3. L’AIB sostiene Il Maggio dei Libri edizione 2024
 
-![segnalibro](https://www.aib.it/wp-content/uploads/2024/04/banner-sito-aib-san-jordi-1.jpg =600x*)
+<img src="https://www.aib.it/wp-content/uploads/2024/04/banner-sito-aib-san-jordi-1.jpg" alt="segnalibro" width="600" height="auto" />
 
 L'AIB, come di consueto, sostiene il Maggio dei libri 2024 promosso dal Cepell, che si svolgerà dal 23 aprile, Giornata mondiale del libro e del diritto d’autore indetta dall’UNESCO, al 31 maggio.
 
