@@ -64,6 +64,7 @@ Il testo è disponibile: [🔗](https://www.aib.it/notizie/soddisfazione-risulta
 
 #### 📚 3. L’AIB sostiene Il Maggio dei Libri edizione 2024
 
+![segnalibro](https://www.aib.it/wp-content/uploads/2024/04/banner-sito-aib-san-jordi-1.jpg =600)
 
 L'AIB, come di consueto, sostiene il Maggio dei libri 2024 promosso dal Cepell, che si svolgerà dal 23 aprile, Giornata mondiale del libro e del diritto d’autore indetta dall’UNESCO, al 31 maggio.
 
@@ -144,9 +145,9 @@ Maggiori informazioni:  [🔗](https://www.aib.it/concorsi/premio-maria-a-abenan
 
 Sono disponibili su AIB notizie gli articoli:
 
-* [4 passi in biblioteca….si parte!](https://aibnotizie.aib.it/4-passi-in-biblioteca-si-parte/) / Donatella Bellardini e Giulio Marconi   
+* 4 passi in biblioteca….si parte![🔗](https://aibnotizie.aib.it/4-passi-in-biblioteca-si-parte/) / Donatella Bellardini e Giulio Marconi   
 
-* [Pronti, si parte! La proposta formativa di AIB Lombardia per il 2024](https://aibnotizie.aib.it/pronti-si-parte-la-proposta-formativa-di-aib-lombardia-per-il-2024/) / Roberta Moro 
+* Pronti, si parte! La proposta formativa di AIB Lombardia per il 2024[🔗](https://aibnotizie.aib.it/pronti-si-parte-la-proposta-formativa-di-aib-lombardia-per-il-2024/) / Roberta Moro 
 
 
 
