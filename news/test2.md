@@ -145,9 +145,9 @@ Maggiori informazioni:  [🔗](https://www.aib.it/concorsi/premio-maria-a-abenan
 
 Sono disponibili su AIB notizie gli articoli:
 
-* 4 passi in biblioteca….si parte![🔗](https://aibnotizie.aib.it/4-passi-in-biblioteca-si-parte/) / Donatella Bellardini e Giulio Marconi   
+* 4 passi in biblioteca….si parte! [🔗](https://aibnotizie.aib.it/4-passi-in-biblioteca-si-parte/) / Donatella Bellardini e Giulio Marconi   
 
-* Pronti, si parte! La proposta formativa di AIB Lombardia per il 2024[🔗](https://aibnotizie.aib.it/pronti-si-parte-la-proposta-formativa-di-aib-lombardia-per-il-2024/) / Roberta Moro 
+* Pronti, si parte! La proposta formativa di AIB Lombardia per il 2024 [🔗](https://aibnotizie.aib.it/pronti-si-parte-la-proposta-formativa-di-aib-lombardia-per-il-2024/) / Roberta Moro 
 
 
 
