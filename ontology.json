@@ -4,11 +4,8 @@
     {"id": "Class2", "label": "Organizzazione", "url": "https://example.com/class2"},
     {"id": "Class3", "label": "Agente", "url": "https://example.com/class3"}
   ],
-  "properties": [
-    {"id": "Property2", "label": "Sottoclasse di", "url": "https://example.com/property2"}
-  ],
   "links": [
-    {"source": "Class1", "target": "Class3", "property": "Property2"},
-    {"source": "Class2", "target": "Class3", "property": "Property2"}
+    {"source": "Class1", "target": "Class3", "label": "Sottoclasse di"},
+    {"source": "Class2", "target": "Class3", "label": "Sottoclasse di"}
   ]
 }
