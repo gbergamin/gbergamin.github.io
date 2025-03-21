@@ -26,11 +26,9 @@
             }))
             .append("g");
 
-        // Definizione del marker (freccia)
-        svg.append("defs").selectAll("marker")
-            .data(["end"])
-            .enter().append("marker")
-            .attr("id", d => d)
+        // Definizione del marker
+        svg.append("defs").append("marker")
+            .attr("id", "end")
             .attr("viewBox", "0 -5 10 10")
             .attr("refX", 15)
             .attr("refY", 0)
