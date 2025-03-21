@@ -2,10 +2,16 @@
   "nodes": [
     {"id": "Q1356", "label": "Foto di costume", "url": "https://hyperstage.wikibase.cloud/entity/Q1356"},
     {"id": "Q1357", "label": "Foto di scena", "url": "https://hyperstage.wikibase.cloud/entity/Q1357"},
+    {"id": "Q1358", "label": "Bozzetto di costume", "url": "https://hyperstage.wikibase.cloud/entity/Q1358"},
+    {"id": "Q1359", "label": "Bozzetto di scena", "url": "https://hyperstage.wikibase.cloud/entity/Q1359"},    
+    {"id": "Q1421", "label": "Modellino di scena", "url": "https://hyperstage.wikibase.cloud/entity/Q1359"},    
     {"id": "Q1355", "label": "Risorsa", "url": "https://hyperstage.wikibase.cloud/entity/Q1355"}
   ],
   "links": [
     {"source": "Q1356", "target": "Q1355", "label": "sottoclasse di", "url": "https://hyperstage.wikibase.cloud/entity/P2"},
-    {"source": "Q1357", "target": "Q1355", "label": "sottoclasse di", "url": "https://hyperstage.wikibase.cloud/entity/P2"}
+    {"source": "Q1357", "target": "Q1355", "label": "sottoclasse di", "url": "https://hyperstage.wikibase.cloud/entity/P2"},
+    {"source": "Q1358", "target": "Q1355", "label": "sottoclasse di", "url": "https://hyperstage.wikibase.cloud/entity/P2"},
+    {"source": "Q1359", "target": "Q1355", "label": "sottoclasse di", "url": "https://hyperstage.wikibase.cloud/entity/P2"},
+    {"source": "Q1421", "target": "Q1355", "label": "sottoclasse di", "url": "https://hyperstage.wikibase.cloud/entity/P2"}
   ]
 }
