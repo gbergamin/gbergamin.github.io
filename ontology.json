@@ -5,7 +5,7 @@
     {"id": "Oggetto1", "label": "Agente", "type": "oggetto"}
   ],
   "links": [
-    {"source": "Soggetto1", "target": "Oggetto1", "label": "Sottoclasse di"},
-    {"source": "Soggetto2", "target": "Oggetto1", "label": "Sottoclasse di"}
+    {"source": "Soggetto1", "target": "Oggetto1", "label": "Sottoclasse di", "url": "https://example.com/sottoclasse-di"},
+    {"source": "Soggetto2", "target": "Oggetto1", "label": "Sottoclasse di", "url": "https://example.com/sottoclasse-di"}
   ]
 }
