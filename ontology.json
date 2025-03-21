@@ -1,15 +1,16 @@
 {
   "classes": [
-    {"id": "Class1", "label": "Classe 1", "url": "https://example.com/class1"},
-    {"id": "Class2", "label": "Classe 2", "url": "https://example.com/class2"}
+    {"id": "Class1", "label": "Persona", "url": "https://example.com/class1"},
+    {"id": "Class2", "label": "Organizzazione", "url": "https://example.com/class2"},
+    {"id": "Class2", "label": "Agente", "url": "https://example.com/class2"}
   ],
   "properties": [
-    {"id": "Property1", "label": "Proprietà 1", "url": "https://example.com/property1"},
-    {"id": "Property2", "label": "Proprietà 2", "url": "https://example.com/property2"}
+    
+    {"id": "Property2", "label": "Sottoclasse di", "url": "https://example.com/property2"}
   ],
   "links": [
-    {"source": "Class1", "target": "Property1"},
+    {"source": "Class1", "target": "Property2"},
     {"source": "Class2", "target": "Property2"},
-    {"source": "Property2", "target": "Class1"}
+    {"source": "Property2", "target": "Class3"}
   ]
 }
