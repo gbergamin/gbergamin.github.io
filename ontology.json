@@ -9,7 +9,7 @@
   ],
   "links": [
     {"source": "Class1", "target": "Property1"},
-    {"source": "Class2", "target": "Property2"}
+    {"source": "Class2", "target": "Property2"},
     {"source": "Property2", "target": "Class1"}
   ]
 }
