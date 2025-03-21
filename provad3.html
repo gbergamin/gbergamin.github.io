@@ -6,6 +6,10 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        body {
+            margin: 0; /* Rimuovi il margine predefinito del body */
+            overflow: hidden; /* Nascondi la barra di scorrimento */
+        }
         .node {
             cursor: pointer;
         }
@@ -26,7 +30,7 @@
             font-family: "Inter", sans-serif; /* Font per le etichette dei link */
             font-size: 11px; /* Dimensione del font */
             font-weight: normal; /* Testo normale */
-            text-decoration: underline; /*sottolinea*/
+            text-decoration: underline;
             fill: #555; /* Colore del testo */
             text-anchor: middle; /* Centra il testo */
             cursor: pointer;
@@ -35,7 +39,8 @@
 </head>
 <body>
     <script>
-        const width = 800, height = 600;
+        const width = window.innerWidth; // Larghezza della finestra del browser
+        const height = window.innerHeight; // Altezza della finestra del browser
 
         const svg = d3.select("body").append("svg")
             .attr("width", width)
@@ -44,6 +49,16 @@
                 svg.attr("transform", event.transform);
             }))
             .append("g");
+
+        // Aggiungi un clipPath per limitare l'area visibile
+        svg.append("defs").append("clipPath")
+            .attr("id", "clip")
+            .append("rect")
+            .attr("width", width)
+            .attr("height", height);
+
+        // Applica il clipPath al gruppo principale
+        svg.attr("clip-path", "url(#clip)");
 
         // Definizione del marker (freccia)
         svg.append("defs").append("marker")
