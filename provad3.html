@@ -98,7 +98,10 @@
                 .call(d3.drag()
                     .on("start", dragstarted)
                     .on("drag", dragged)
-                    .on("end", dragended));
+                    .on("end", dragended))
+                .on("click", (event, d) => {
+                    if (d.url) window.open(d.url, "_blank"); // Apri l'URL se esiste
+                });
 
             node.append("circle")
                 .attr("r", 10);
