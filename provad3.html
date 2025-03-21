@@ -8,6 +8,12 @@
         .node {
             cursor: pointer;
         }
+        .node circle {
+            fill: #69b3a2; /* Colore per le classi */
+        }
+        .node.property circle {
+            fill: #ff7f0e; /* Colore per le proprietà */
+        }
         .link {
             stroke: #999;
             stroke-opacity: 0.6;
@@ -50,7 +56,7 @@
             .force("center", d3.forceCenter(width / 2, height / 2));
 
         d3.json("ontology.json").then(data => {
-            const nodes = data.classes;
+            const nodes = [...data.classes, ...data.properties];
             const links = data.links;
 
             // Creare una mappa per associare gli id ai nodi
@@ -59,8 +65,7 @@
             // Trasformare i link per usare riferimenti agli oggetti
             const mappedLinks = links.map(link => ({
                 source: nodeMap.get(link.source),
-                target: nodeMap.get(link.target),
-                label: link.label // Aggiungi l'etichetta del link
+                target: nodeMap.get(link.target)
             }));
 
             const link = svg.append("g")
@@ -70,27 +75,18 @@
                 .attr("class", "link")
                 .attr("marker-end", "url(#end)"); // Applica il marker
 
-            // Aggiungi etichette ai link
-            const linkLabels = svg.append("g")
-                .selectAll("text")
-                .data(mappedLinks)
-                .enter().append("text")
-                .attr("class", "link-label")
-                .text(d => d.label); // Usa l'etichetta del link
-
             const node = svg.append("g")
                 .selectAll("g")
                 .data(nodes)
                 .enter().append("g")
-                .attr("class", "node")
+                .attr("class", d => d.url ? "node" : "node property") // Assegna una classe diversa per le proprietà
                 .call(d3.drag()
                     .on("start", dragstarted)
                     .on("drag", dragged)
                     .on("end", dragended));
 
             node.append("circle")
-                .attr("r", 10)
-                .attr("fill", "#69b3a2");
+                .attr("r", 10);
 
             node.append("text")
                 .attr("dx", 12)
@@ -107,11 +103,6 @@
                     .attr("y1", d => d.source.y)
                     .attr("x2", d => d.target.x)
                     .attr("y2", d => d.target.y);
-
-                // Posiziona le etichette dei link al centro dei link
-                linkLabels
-                    .attr("x", d => (d.source.x + d.target.x) / 2)
-                    .attr("y", d => (d.source.y + d.target.y) / 2);
 
                 node
                     .attr("transform", d => `translate(${d.x},${d.y})`);
