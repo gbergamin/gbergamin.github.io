@@ -11,13 +11,21 @@
         .node circle {
             fill: #69b3a2; /* Colore per i nodi */
         }
+        .node text {
+            font-family: "Arial, sans-serif"; /* Font per le etichette dei nodi */
+            font-size: 14px; /* Dimensione del font */
+            font-weight: bold; /* Grassetto */
+            fill: #333; /* Colore del testo */
+        }
         .link {
             stroke: #999;
             stroke-opacity: 0.6;
         }
         .link-label {
-            font-size: 12px;
-            fill: #333;
+            font-family: "Arial, sans-serif"; /* Font per le etichette dei link */
+            font-size: 12px; /* Dimensione del font */
+            font-weight: normal; /* Testo normale */
+            fill: #555; /* Colore del testo */
             text-anchor: middle; /* Centra il testo */
             cursor: pointer;
         }
@@ -41,8 +49,8 @@
             .attr("viewBox", "0 -5 10 10")
             .attr("refX", 15)
             .attr("refY", 0)
-            .attr("markerWidth", 10)
-            .attr("markerHeight", 10)
+            .attr("markerWidth", 6)
+            .attr("markerHeight", 6)
             .attr("orient", "auto")
             .append("path")
             .attr("d", "M0,-5L10,0L0,5")
