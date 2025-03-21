@@ -149,8 +149,9 @@
 
         function dragended(event, d) {
             if (!event.active) simulation.alphaTarget(0);
-            d.fx = null;
-            d.fy = null;
+            // Mantieni la posizione del nodo dopo il rilascio
+            d.fx = event.x;
+            d.fy = event.y;
         }
     </script>
 </body>
