@@ -2,7 +2,7 @@
   "classes": [
     {"id": "Class1", "label": "Persona", "url": "https://example.com/class1"},
     {"id": "Class2", "label": "Organizzazione", "url": "https://example.com/class2"},
-    {"id": "Class3", "label": "Agente", "url": "https://example.com/class2"}
+    {"id": "Class3", "label": "Agente", "url": "https://example.com/class3"}
   ],
   "properties": [
     
