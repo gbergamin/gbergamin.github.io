@@ -5,7 +5,7 @@
     {"id": "Q1355", "label": "Risorsa", "url": "https://hyperstage.wikibase.cloud/entity/Q1355"}
   ],
   "links": [
-    {"source": "Soggetto1", "target": "Oggetto1", "label": "Sottoclasse di", "url": "https://example.com/sottoclasse-di"},
-    {"source": "Soggetto2", "target": "Oggetto1", "label": "Sottoclasse di", "url": "https://example.com/sottoclasse-di"}
+    {"source": "Q1356", "target": "Q1355", "label": "Sottoclasse di", "url": "https://example.com/sottoclasse-di"},
+    {"source": "Q1357", "target": "Q1355", "label": "Sottoclasse di", "url": "https://example.com/sottoclasse-di"}
   ]
 }
