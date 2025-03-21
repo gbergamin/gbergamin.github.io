@@ -167,8 +167,8 @@
                 linkUnderlines
                     .attr("x1", d => (d.source.x + d.target.x) / 2 - 30) // Regola la lunghezza della linea
                     .attr("x2", d => (d.source.x + d.target.x) / 2 + 30) // Regola la lunghezza della linea
-                    .attr("y1", d => (d.source.y + d.target.y) / 2 + 8) // Regola la distanza dal testo
-                    .attr("y2", d => (d.source.y + d.target.y) / 2 + 8); // Regola la distanza dal testo
+                    .attr("y1", d => (d.source.y + d.target.y) / 2 + 2) // Regola la distanza dal testo
+                    .attr("y2", d => (d.source.y + d.target.y) / 2 + 2); // Regola la distanza dal testo
 
                 node
                     .attr("transform", d => `translate(${d.x},${d.y})`);
