@@ -30,6 +30,8 @@
             font-family: "Inter", sans-serif; /* Font per le etichette dei link */
             font-size: 11px; /* Dimensione del font */
             font-weight: normal; /* Testo normale */
+            text-decoration: underline;
+            text-decoration-color: #69b3a2;
             fill: #555; /* Colore del testo */
             text-anchor: middle; /* Centra il testo */
             cursor: pointer;
@@ -113,15 +115,6 @@
                     if (d.url) window.open(d.url, "_blank"); // Apri l'URL se esiste
                 });
 
-            // Aggiungi una linea sotto ogni etichetta del link
-            const linkUnderlines = svg.append("g")
-                .selectAll("line")
-                .data(mappedLinks)
-                .enter().append("line")
-                .attr("class", "link-underline")
-                .attr("stroke", "#69b3a2") // Colore della sottolineatura
-                .attr("stroke-width", 1); // Spessore della sottolineatura
-
             // Disegna i nodi
             const node = svg.append("g")
                 .selectAll("g")
@@ -162,13 +155,6 @@
                 linkLabels
                     .attr("x", d => (d.source.x + d.target.x) / 2)
                     .attr("y", d => (d.source.y + d.target.y) / 2);
-
-                // Posiziona le linee sotto le etichette dei link
-                linkUnderlines
-                    .attr("x1", d => (d.source.x + d.target.x) / 2 - 40) // Regola la lunghezza della linea
-                    .attr("x2", d => (d.source.x + d.target.x) / 2 + 40) // Regola la lunghezza della linea
-                    .attr("y1", d => (d.source.y + d.target.y) / 2 + 2) // Regola la distanza dal testo
-                    .attr("y2", d => (d.source.y + d.target.y) / 2 + 2); // Regola la distanza dal testo
 
                 node
                     .attr("transform", d => `translate(${d.x},${d.y})`);
