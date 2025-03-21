@@ -1,8 +1,8 @@
 {
   "nodes": [
-    {"id": "Soggetto1", "label": "Persona", "type": "soggetto"},
-    {"id": "Soggetto2", "label": "Organizzazione", "type": "soggetto"},
-    {"id": "Oggetto1", "label": "Agente", "type": "oggetto"}
+    {"id": "Q1356", "label": "Foto di costume", "url": "https://hyperstage.wikibase.cloud/entity/Q1356"},
+    {"id": "Q1357", "label": "Foto di scena", "url": "https://hyperstage.wikibase.cloud/entity/Q1357"},
+    {"id": "Q1355", "label": "Risorsa", "type": "https://hyperstage.wikibase.cloud/entity/Q1355"}
   ],
   "links": [
     {"source": "Soggetto1", "target": "Oggetto1", "label": "Sottoclasse di", "url": "https://example.com/sottoclasse-di"},
