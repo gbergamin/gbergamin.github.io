@@ -19,6 +19,7 @@
             font-size: 12px;
             fill: #333;
             text-anchor: middle; /* Centra il testo */
+            cursor: pointer;
         }
     </style>
 </head>
@@ -48,9 +49,10 @@
             .attr("fill", "#999");
 
         const simulation = d3.forceSimulation()
-            .force("link", d3.forceLink().id(d => d.id))
-            .force("charge", d3.forceManyBody())
-            .force("center", d3.forceCenter(width / 2, height / 2));
+            .force("link", d3.forceLink().id(d => d.id).distance(100)) // Aumenta la distanza tra i nodi collegati
+            .force("charge", d3.forceManyBody().strength(-200)) // Aumenta la repulsione tra i nodi
+            .force("center", d3.forceCenter(width / 2, height / 2))
+            .force("collision", d3.forceCollide().radius(30)); // Evita sovrapposizioni
 
         // Carica i dati dal file JSON
         d3.json("ontology.json").then(data => {
@@ -64,7 +66,8 @@
             const mappedLinks = links.map(link => ({
                 source: nodeMap.get(link.source),
                 target: nodeMap.get(link.target),
-                label: link.label // Aggiungi l'etichetta del link
+                label: link.label, // Aggiungi l'etichetta del link
+                url: link.url // Aggiungi l'URL del link
             }));
 
             // Disegna i link
@@ -81,7 +84,10 @@
                 .data(mappedLinks)
                 .enter().append("text")
                 .attr("class", "link-label")
-                .text(d => d.label); // Usa l'etichetta del link
+                .text(d => d.label)
+                .on("click", (event, d) => {
+                    if (d.url) window.open(d.url, "_blank"); // Apri l'URL se esiste
+                });
 
             // Disegna i nodi
             const node = svg.append("g")
@@ -101,6 +107,12 @@
                 .attr("dx", 12)
                 .attr("dy", ".35em")
                 .text(d => d.label);
+
+            // Inizializza le posizioni dei nodi in modo più distribuito
+            nodes.forEach((node, i) => {
+                node.x = width / 2 + (Math.random() - 0.5) * 200;
+                node.y = height / 2 + (Math.random() - 0.5) * 200;
+            });
 
             // Aggiorna la posizione degli elementi durante la simulazione
             simulation.nodes(nodes).on("tick", () => {
