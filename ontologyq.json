@@ -1,32 +1,15 @@
 {
   "nodes": [
-    {"id": "Q1", "label": "Persona", "type": "classe"},
-    {"id": "Q2", "label": "Organizzazione", "type": "classe"},
-    {"id": "Q3", "label": "Agente", "type": "classe"},
-    {"id": "P1", "label": "Sottoclasse di", "type": "proprietà"},
-    {"id": "P2", "label": "Data di creazione", "type": "proprietà"},
-    {"id": "P3", "label": "Autore", "type": "proprietà"}
+    {"id": "Q1", "label": "Spettacolo", "url": "https://hyperstage.wikibase.cloud/entity/Q1"},
+    {"id": "Q6", "label": "Persona", "url": "https://hyperstage.wikibase.cloud/entity/Q6"},
+    {"id": "Q24", "label": "Personaggio tealtrale", "url": "https://hyperstage.wikibase.cloud/entity/Q24"},
+	{"id": "Q1-P11-Q6", "label": "S"},
   ],
   "links": [
-    {
-      "source": "Q1", 
-      "target": "Q3", 
-      "label": "Sottoclasse di", 
-      "property": "P1",
-      "qualifiers": [
-        {"property": "P2", "value": "2023-01-01"},
-        {"property": "P3", "value": "Admin"}
-      ]
-    },
-    {
-      "source": "Q2", 
-      "target": "Q3", 
-      "label": "Sottoclasse di", 
-      "property": "P1",
-      "qualifiers": [
-        {"property": "P2", "value": "2023-02-01"},
-        {"property": "P3", "value": "Editor"}
-      ]
-    }
+    {"source": "Q1", "target": "Q6", "label": "interpreti", "url": "https://hyperstage.wikibase.cloud/entity/P11"},
+    {"source": "Q6", "target": "Q1-P11-Q6", "label": "s"},
+    {"source": "Q1-P11-Q6", "target": "Q1", "label": "s"},
+    {"source": "Q1-P11-Q6", "target": "Q24", "label": "come", "url": "https://hyperstage.wikibase.cloud/entity/P12"}
+    
   ]
 }
