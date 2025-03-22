@@ -1,27 +1,17 @@
 {
   "nodes": [
-    {"id": "Q1356", "label": "Foto di costume", "url": "https://hyperstage.wikibase.cloud/entity/Q1356"},
-    {"id": "Q1357", "label": "Foto di scena", "url": "https://hyperstage.wikibase.cloud/entity/Q1357"},
-    {"id": "Q1358", "label": "Bozzetto di costume", "url": "https://hyperstage.wikibase.cloud/entity/Q1358"},
-    {"id": "Q1359", "label": "Bozzetto di scena", "url": "https://hyperstage.wikibase.cloud/entity/Q1359"},    
-    {"id": "Q1421", "label": "Modellino di scena", "url": "https://hyperstage.wikibase.cloud/entity/Q1421"},    
-    {"id": "Q1355", "label": "Risorsa", "url": "https://hyperstage.wikibase.cloud/entity/Q1355"},
-    {"id": "Q1500", "label": "Risorsa digitale", "url": "https://hyperstage.wikibase.cloud/entity/Q1500"},
-    {"id": "Q1501", "label": "Risorsa fisica", "url": "https://hyperstage.wikibase.cloud/entity/Q1501"}
+    {"id": "Q1", "label": "Spettacolo", "url": "https://hyperstage.wikibase.cloud/entity/Q1"},
+    {"id": "Q6", "label": "Persona", "url": "https://hyperstage.wikibase.cloud/entity/Q6"},
+    {"id": "Q24", "label": "Personaggio teatrale", "url": "https://hyperstage.wikibase.cloud/entity/Q24"},
+    {"id": "Q1-P11-Q6", "label": "performance", "url": "https://hyperstage.wikibase.cloud/entity/Q1-P11-Q6"}
+    
   ],
   "links": [
-    {"source": "Q1356", "target": "Q1355", "label": "sottoclasse di", "url": "https://hyperstage.wikibase.cloud/entity/P2"},
-    {"source": "Q1357", "target": "Q1355", "label": "sottoclasse di", "url": "https://hyperstage.wikibase.cloud/entity/P2"},
-    {"source": "Q1358", "target": "Q1355", "label": "sottoclasse di", "url": "https://hyperstage.wikibase.cloud/entity/P2"},
-    {"source": "Q1359", "target": "Q1355", "label": "sottoclasse di", "url": "https://hyperstage.wikibase.cloud/entity/P2"},
-    {"source": "Q1421", "target": "Q1355", "label": "sottoclasse di", "url": "https://hyperstage.wikibase.cloud/entity/P2"},
-    {"source": "Q1355", "target": "Q1500", "label": "sottoclasse di", "url": "https://hyperstage.wikibase.cloud/entity/P2"},
-    {"source": "Q1355", "target": "Q1501", "label": "sottoclasse di", "url": "https://hyperstage.wikibase.cloud/entity/P2"},
-    {"source": "Q1356", "target": "Q1500", "label": "tipo di", "url": "https://hyperstage.wikibase.cloud/entity/P3"},
-    {"source": "Q1357", "target": "Q1500", "label": "tipo di", "url": "https://hyperstage.wikibase.cloud/entity/P3"},
-    {"source": "Q1358", "target": "Q1501", "label": "tipo di", "url": "https://hyperstage.wikibase.cloud/entity/P3"},
-    {"source": "Q1359", "target": "Q1501", "label": "tipo di", "url": "https://hyperstage.wikibase.cloud/entity/P3"},
-    {"source": "Q1421", "target": "Q1501", "label": "tipo di", "url": "https://hyperstage.wikibase.cloud/entity/P3"}
+    {"source": "Q1", "target": "Q6", "label": "personaggi", "url": "https://hyperstage.wikibase.cloud/entity/P11"},
+    {"source": "Q6", "target": "Q1-P11-Q6", "label": "personaggi", "url": "https://hyperstage.wikibase.cloud/entity/P11"},
+    {"source": "Q1-P11-Q6", "target": "Q1", "label": "personaggi", "url": "https://hyperstage.wikibase.cloud/entity/P11"},
+    {"source": "Q1-P11-Q6", "target": "Q24", "label": "personaggio interpretato", "url": "https://hyperstage.wikibase.cloud/entity/P12"}
+    
   ]
 }
 
