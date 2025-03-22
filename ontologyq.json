@@ -1,7 +1,7 @@
 {
   "nodes": [
     {"id": "Q1", "label": "Spettacolo", "url": "https://hyperstage.wikibase.cloud/entity/Q1"},
-    {"id": "Q6", "label": "Artista", "url": "https://hyperstage.wikibase.cloud/entity/Q6"},
+    {"id": "Q6", "label": "Persona", "url": "https://hyperstage.wikibase.cloud/entity/Q6"},
     {"id": "Q24", "label": "Personaggio teatrale", "url": "https://hyperstage.wikibase.cloud/entity/Q24"},
     {"id": "Q1-P11-Q6", "label": "[performance]", "url": "https://hyperstage.wikibase.cloud/entity/Q1-P11-Q6"}
     
