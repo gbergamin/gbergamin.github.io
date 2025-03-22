@@ -80,7 +80,7 @@
             .force("collision", d3.forceCollide().radius(30)); // Evita sovrapposizioni
 
         // Carica i dati dal file JSON
-        d3.json("ontologyq.json").then(data => {
+        d3.json("ontology.json").then(data => {
             const nodes = data.nodes;
             const links = data.links;
 
