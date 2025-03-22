@@ -3,13 +3,11 @@
     {"id": "Q1", "label": "Spettacolo", "url": "https://hyperstage.wikibase.cloud/entity/Q1"},
     {"id": "Q6", "label": "Persona", "url": "https://hyperstage.wikibase.cloud/entity/Q6"},
     {"id": "Q24", "label": "Personaggio tealtrale", "url": "https://hyperstage.wikibase.cloud/entity/Q24"},
-    {"id": "Q1-P11-Q6", "label": "S","url": "https://hyperstage.wikibase.cloud/entity/Q11-P11-Q6"},
   ],
   "links": [
-    {"source": "Q1", "target": "Q6", "label": "interpreti", "url": "https://hyperstage.wikibase.cloud/entity/P11"},
-    {"source": "Q6", "target": "Q1-P11-Q6", "label": "s",, "url": "https://hyperstage.wikibase.cloud/entity/P11"},
-    {"source": "Q1-P11-Q6", "target": "Q1", "label": "s", "url": "https://hyperstage.wikibase.cloud/entity/P11"},
-    {"source": "Q1-P11-Q6", "target": "Q24", "label": "come","url": "https://hyperstage.wikibase.cloud/entity/P12"}
+    {"source": "Q6", "target": "Q1", "label": "interpreti", "url": "https://hyperstage.wikibase.cloud/entity/P11"},
+    {"source": "Q24", "target": "Q6", "label": "intermedio", "url": "https://hyperstage.wikibase.cloud/entity/P11"},
+    
    ]
 }
 
