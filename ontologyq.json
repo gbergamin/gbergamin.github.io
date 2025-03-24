@@ -7,10 +7,10 @@
     
   ],
   "links": [
-    {"source": "Q1", "target": "Q6", "label": "personaggi", "url": "https://hyperstage.wikibase.cloud/entity/P11"},
+    {"source": "Q1", "target": "Q6", "label": "P11-personaggi", "url": "https://hyperstage.wikibase.cloud/entity/P11"},
     {"source": "Q6", "target": "Q1-P11-Q6", "label": "[P11]", "url": "https://hyperstage.wikibase.cloud/entity/P11"},
     {"source": "Q1-P11-Q6", "target": "Q1", "label": "[P11]", "url": "https://hyperstage.wikibase.cloud/entity/P11"},
-    {"source": "Q1-P11-Q6", "target": "Q24", "label": "come", "url": "https://hyperstage.wikibase.cloud/entity/P12"}
+    {"source": "Q1-P11-Q6", "target": "Q24", "label": "P12-come", "url": "https://hyperstage.wikibase.cloud/entity/P12"}
     
   ]
 }
