@@ -39,242 +39,242 @@
     <canvas id="gameCanvas"></canvas>
 
     <script>
-        // Game setup
-        const canvas = document.getElementById('gameCanvas');
-        const ctx = canvas.getContext('2d');
-        canvas.width = 1000;
-        canvas.height = 600;
+    // Game setup
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = 1000;
+    canvas.height = 600;
 
-        // Game state
-        let score1 = 0, score2 = 0;
-        const balls = [];
-        const maxBalls = 4;
-        let ballSpawnTimer = 0;
-        
-        // Paddles
-        const paddleWidth = 15;
-        const paddleHeight = 100;
-        const paddleSpeed = 8;
-        
-        const player1 = {
-            x: 30,
-            y: canvas.height / 2 - paddleHeight / 2,
-            dy: 0
-        };
-        
-        const player2 = {
-            x: canvas.width - 30 - paddleWidth,
-            y: canvas.height / 2 - paddleHeight / 2,
-            dy: 0
-        };
+    // Game state
+    let score1 = 0, score2 = 0;
+    const balls = [];
+    const maxBalls = 4;
+    let ballSpawnTimer = 0;
+    
+    // Paddles
+    const paddleWidth = 15;
+    const paddleHeight = 100;
+    const paddleSpeed = 8;
+    
+    const player1 = {
+        x: 30,
+        y: canvas.height / 2 - paddleHeight / 2,
+        dy: 0
+    };
+    
+    const player2 = {
+        x: canvas.width - 30 - paddleWidth,
+        y: canvas.height / 2 - paddleHeight / 2,
+        dy: 0
+    };
 
-        // Ball class
-        class Ball {
-            constructor() {
+    // Ball class
+    class Ball {
+        constructor() {
+            this.reset();
+            this.color = this.getRandomNeonColor();
+        }
+        
+        reset() {
+            this.x = canvas.width / 2;
+            this.y = canvas.height / 2;
+            this.radius = 12;
+            this.dx = (Math.random() > 0.5 ? 1 : -1) * (5 + Math.random() * 2);
+            this.dy = (Math.random() * 4 - 2);
+            this.color = this.getRandomNeonColor();
+        }
+        
+        getRandomNeonColor() {
+            const colors = ['#0ff', '#f0f', '#ff0', '#0f0', '#f00'];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+        
+        update() {
+            this.x += this.dx;
+            this.y += this.dy;
+            
+            // Wall collision
+            if (this.y - this.radius < 0 || this.y + this.radius > canvas.height) {
+                this.dy = -this.dy;
+                createParticles(this.x, this.y, 5, this.color);
+            }
+            
+            // Paddle collision
+            if (this.x - this.radius < player1.x + paddleWidth && 
+                this.x > player1.x && 
+                this.y > player1.y && 
+                this.y < player1.y + paddleHeight) {
+                this.dx = Math.abs(this.dx) * 1.05;
+                this.dy = (this.y - (player1.y + paddleHeight/2)) * 0.2;
+                createParticles(this.x, this.y, 10, this.color);
+            }
+            
+            if (this.x + this.radius > player2.x && 
+                this.x < player2.x + paddleWidth && 
+                this.y > player2.y && 
+                this.y < player2.y + paddleHeight) {
+                this.dx = -Math.abs(this.dx) * 1.05;
+                this.dy = (this.y - (player2.y + paddleHeight/2)) * 0.2;
+                createParticles(this.x, this.y, 10, this.color);
+            }
+            
+            // Scoring
+            if (this.x < 0) {
+                score2++;
+                document.getElementById('score2').textContent = score2;
                 this.reset();
-                this.color = this.getRandomNeonColor();
+                createExplosion(canvas.width / 4, canvas.height / 2, '#f0f');
             }
             
-            reset() {
-                this.x = canvas.width / 2;
-                this.y = canvas.height / 2;
-                this.radius = 12;
-                this.dx = (Math.random() > 0.5 ? 1 : -1) * (5 + Math.random() * 2);
-                this.dy = (Math.random() * 4 - 2);
-                this.color = this.getRandomNeonColor();
-            }
-            
-            getRandomNeonColor() {
-                const colors = ['#0ff', '#f0f', '#ff0', '#0f0', '#f00'];
-                return colors[Math.floor(Math.random() * colors.length)];
-            }
-            
-            update() {
-                this.x += this.dx;
-                this.y += this.dy;
-                
-                // Wall collision
-                if (this.y - this.radius < 0 || this.y + this.radius > canvas.height) {
-                    this.dy = -this.dy;
-                    createParticles(this.x, this.y, 5, this.color);
-                }
-                
-                // Paddle collision
-                if (this.x - this.radius < player1.x + paddleWidth && 
-                    this.x > player1.x && 
-                    this.y > player1.y && 
-                    this.y < player1.y + paddleHeight) {
-                    this.dx = Math.abs(this.dx) * 1.05;
-                    this.dy = ((this.y - (player1.y + paddleHeight/2)) * 0.2;
-                    createParticles(this.x, this.y, 10, this.color);
-                }
-                
-                if (this.x + this.radius > player2.x && 
-                    this.x < player2.x + paddleWidth && 
-                    this.y > player2.y && 
-                    this.y < player2.y + paddleHeight) {
-                    this.dx = -Math.abs(this.dx) * 1.05;
-                    this.dy = ((this.y - (player2.y + paddleHeight/2)) * 0.2;
-                    createParticles(this.x, this.y, 10, this.color);
-                }
-                
-                // Scoring
-                if (this.x < 0) {
-                    score2++;
-                    document.getElementById('score2').textContent = score2;
-                    this.reset();
-                    createExplosion(canvas.width / 4, canvas.height / 2, '#f0f');
-                }
-                
-                if (this.x > canvas.width) {
-                    score1++;
-                    document.getElementById('score1').textContent = score1;
-                    this.reset();
-                    createExplosion(canvas.width * 3/4, canvas.height / 2, '#0ff');
-                }
-            }
-            
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fillStyle = this.color;
-                ctx.fill();
-                
-                // Glow effect
-                ctx.shadowBlur = 20;
-                ctx.shadowColor = this.color;
-                ctx.fill();
-                ctx.shadowBlur = 0;
+            if (this.x > canvas.width) {
+                score1++;
+                document.getElementById('score1').textContent = score1;
+                this.reset();
+                createExplosion(canvas.width * 3/4, canvas.height / 2, '#0ff');
             }
         }
-
-        // Particle effects
-        function createParticles(x, y, count, color) {
-            for (let i = 0; i < count; i++) {
-                setTimeout(() => {
-                    const particle = document.createElement('div');
-                    particle.className = 'explosion';
-                    particle.style.width = '4px';
-                    particle.style.height = '4px';
-                    particle.style.background = color;
-                    particle.style.left = `${x + Math.random() * 20 - 10}px`;
-                    particle.style.top = `${y + Math.random() * 20 - 10}px`;
-                    document.body.appendChild(particle);
-                    
-                    const angle = Math.random() * Math.PI * 2;
-                    const speed = 1 + Math.random() * 3;
-                    let lifetime = 0;
-                    
-                    const animateParticle = () => {
-                        lifetime++;
-                        const px = parseFloat(particle.style.left) + Math.cos(angle) * speed;
-                        const py = parseFloat(particle.style.top) + Math.sin(angle) * speed;
-                        
-                        particle.style.left = `${px}px`;
-                        particle.style.top = `${py}px`;
-                        particle.style.opacity = 1 - lifetime / 30;
-                        
-                        if (lifetime < 30) {
-                            requestAnimationFrame(animateParticle);
-                        } else {
-                            particle.remove();
-                        }
-                    };
-                    
-                    animateParticle();
-                }, i * 30);
-            }
-        }
-
-        // Big explosion on scoring
-        function createExplosion(x, y, color) {
-            const explosion = document.createElement('div');
-            explosion.className = 'explosion';
-            explosion.style.width = '0px';
-            explosion.style.height = '0px';
-            explosion.style.background = color;
-            explosion.style.left = `${x}px`;
-            explosion.style.top = `${y}px`;
-            explosion.style.boxShadow = `0 0 20px 10px ${color}`;
-            explosion.style.transition = 'all 0.5s ease-out';
-            document.body.appendChild(explosion);
-            
-            setTimeout(() => {
-                explosion.style.width = '200px';
-                explosion.style.height = '200px';
-                explosion.style.opacity = '0';
-            }, 10);
-            
-            setTimeout(() => {
-                explosion.remove();
-            }, 600);
-        }
-
-        // Input handling
-        const keys = {};
-        document.addEventListener('keydown', (e) => keys[e.key] = true);
-        document.addEventListener('keyup', (e) => keys[e.key] = false);
-
-        // Game loop
-        function gameLoop() {
-            // Clear canvas
-            ctx.fillStyle = 'rgba(10, 10, 30, 0.2)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            
-            // Draw center line
-            ctx.strokeStyle = 'rgba(0, 255, 255, 0.2)';
-            ctx.setLineDash([10, 10]);
+        
+        draw() {
             ctx.beginPath();
-            ctx.moveTo(canvas.width / 2, 0);
-            ctx.lineTo(canvas.width / 2, canvas.height);
-            ctx.stroke();
-            ctx.setLineDash([]);
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = this.color;
+            ctx.fill();
             
-            // Update paddles
-            if (keys['w']) player1.dy = -paddleSpeed;
-            else if (keys['s']) player1.dy = paddleSpeed;
-            else player1.dy = 0;
-            
-            if (keys['ArrowUp']) player2.dy = -paddleSpeed;
-            else if (keys['ArrowDown']) player2.dy = paddleSpeed;
-            else player2.dy = 0;
-            
-            player1.y += player1.dy;
-            player2.y += player2.dy;
-            
-            // Paddle boundaries
-            player1.y = Math.max(0, Math.min(canvas.height - paddleHeight, player1.y));
-            player2.y = Math.max(0, Math.min(canvas.height - paddleHeight, player2.y));
-            
-            // Draw paddles
-            ctx.fillStyle = '#0ff';
-            ctx.fillRect(player1.x, player1.y, paddleWidth, paddleHeight);
-            ctx.fillStyle = '#f0f';
-            ctx.fillRect(player2.x, player2.y, paddleWidth, paddleHeight);
-            
-            // Spawn new balls occasionally
-            ballSpawnTimer++;
-            if (ballSpawnTimer > 180 && balls.length < maxBalls) {
-                balls.push(new Ball());
-                ballSpawnTimer = 0;
-                document.getElementById('message').textContent = `BALL INCOMING! (${balls.length}/${maxBalls})`;
-                setTimeout(() => {
-                    document.getElementById('message').textContent = 'DEFLECT THE ORBS!';
-                }, 1000);
-            }
-            
-            // Update and draw balls
-            balls.forEach(ball => {
-                ball.update();
-                ball.draw();
-            });
-            
-            requestAnimationFrame(gameLoop);
+            // Glow effect
+            ctx.shadowBlur = 20;
+            ctx.shadowColor = this.color;
+            ctx.fill();
+            ctx.shadowBlur = 0;
         }
+    }
 
-        // Start with one ball
-        balls.push(new Ball());
-        gameLoop();
-    </script>
+    // Particle effects
+    function createParticles(x, y, count, color) {
+        for (let i = 0; i < count; i++) {
+            setTimeout(() => {
+                const particle = document.createElement('div');
+                particle.className = 'explosion';
+                particle.style.width = '4px';
+                particle.style.height = '4px';
+                particle.style.background = color;
+                particle.style.left = `${x + Math.random() * 20 - 10}px`;
+                particle.style.top = `${y + Math.random() * 20 - 10}px`;
+                document.body.appendChild(particle);
+                
+                const angle = Math.random() * Math.PI * 2;
+                const speed = 1 + Math.random() * 3;
+                let lifetime = 0;
+                
+                const animateParticle = () => {
+                    lifetime++;
+                    const px = parseFloat(particle.style.left) + Math.cos(angle) * speed;
+                    const py = parseFloat(particle.style.top) + Math.sin(angle) * speed;
+                    
+                    particle.style.left = `${px}px`;
+                    particle.style.top = `${py}px`;
+                    particle.style.opacity = 1 - lifetime / 30;
+                    
+                    if (lifetime < 30) {
+                        requestAnimationFrame(animateParticle);
+                    } else {
+                        particle.remove();
+                    }
+                };
+                
+                animateParticle();
+            }, i * 30);
+        }
+    }
+
+    // Big explosion on scoring
+    function createExplosion(x, y, color) {
+        const explosion = document.createElement('div');
+        explosion.className = 'explosion';
+        explosion.style.width = '0px';
+        explosion.style.height = '0px';
+        explosion.style.background = color;
+        explosion.style.left = `${x}px`;
+        explosion.style.top = `${y}px`;
+        explosion.style.boxShadow = `0 0 20px 10px ${color}`;
+        explosion.style.transition = 'all 0.5s ease-out';
+        document.body.appendChild(explosion);
+        
+        setTimeout(() => {
+            explosion.style.width = '200px';
+            explosion.style.height = '200px';
+            explosion.style.opacity = '0';
+        }, 10);
+        
+        setTimeout(() => {
+            explosion.remove();
+        }, 600);
+    }
+
+    // Input handling
+    const keys = {};
+    document.addEventListener('keydown', (e) => keys[e.key] = true);
+    document.addEventListener('keyup', (e) => keys[e.key] = false);
+
+    // Game loop
+    function gameLoop() {
+        // Clear canvas
+        ctx.fillStyle = 'rgba(10, 10, 30, 0.2)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        // Draw center line
+        ctx.strokeStyle = 'rgba(0, 255, 255, 0.2)';
+        ctx.setLineDash([10, 10]);
+        ctx.beginPath();
+        ctx.moveTo(canvas.width / 2, 0);
+        ctx.lineTo(canvas.width / 2, canvas.height);
+        ctx.stroke();
+        ctx.setLineDash([]);
+        
+        // Update paddles
+        if (keys['w']) player1.dy = -paddleSpeed;
+        else if (keys['s']) player1.dy = paddleSpeed;
+        else player1.dy = 0;
+        
+        if (keys['ArrowUp']) player2.dy = -paddleSpeed;
+        else if (keys['ArrowDown']) player2.dy = paddleSpeed;
+        else player2.dy = 0;
+        
+        player1.y += player1.dy;
+        player2.y += player2.dy;
+        
+        // Paddle boundaries
+        player1.y = Math.max(0, Math.min(canvas.height - paddleHeight, player1.y));
+        player2.y = Math.max(0, Math.min(canvas.height - paddleHeight, player2.y));
+        
+        // Draw paddles
+        ctx.fillStyle = '#0ff';
+        ctx.fillRect(player1.x, player1.y, paddleWidth, paddleHeight);
+        ctx.fillStyle = '#f0f';
+        ctx.fillRect(player2.x, player2.y, paddleWidth, paddleHeight);
+        
+        // Spawn new balls occasionally
+        ballSpawnTimer++;
+        if (ballSpawnTimer > 180 && balls.length < maxBalls) {
+            balls.push(new Ball());
+            ballSpawnTimer = 0;
+            document.getElementById('message').textContent = `BALL INCOMING! (${balls.length}/${maxBalls})`;
+            setTimeout(() => {
+                document.getElementById('message').textContent = 'DEFLECT THE ORBS!';
+            }, 1000);
+        }
+        
+        // Update and draw balls
+        balls.forEach(ball => {
+            ball.update();
+            ball.draw();
+        });
+        
+        requestAnimationFrame(gameLoop);
+    }
+
+    // Start with one ball
+    balls.push(new Ball());
+    gameLoop();
+</script>
 </body>
 </html>
