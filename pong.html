@@ -1,19 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>CYBERNETIC PONG: Multi-Ball Mayhem</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PONG Cybernetico Single Player</title>
     <style>
         body {
             margin: 0;
+            padding: 0;
             overflow: hidden;
+            touch-action: none;
             background: #0a0a1a;
             font-family: 'Courier New', monospace;
             color: #0ff;
+            position: fixed;
+            width: 100%;
+            height: 100%;
         }
         canvas {
             display: block;
             background: radial-gradient(ellipse at center, #1a1a3a 0%, #000 100%);
+            width: 100%;
+            height: 100%;
         }
         #ui {
             position: absolute;
@@ -22,104 +30,135 @@
             text-align: center;
             font-size: 24px;
             text-shadow: 0 0 10px #0ff;
-        }
-        .explosion {
-            position: absolute;
-            border-radius: 50%;
+            z-index: 100;
             pointer-events: none;
+        }
+        #menu {
+            position: absolute;
+            top: 50%;
+            left: 50%;
             transform: translate(-50%, -50%);
+            background: rgba(0, 20, 40, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #0ff;
+            text-align: center;
+            z-index: 200;
+        }
+        .btn {
+            background: #0066ff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 0 10px #0ff;
+        }
+        .btn:active {
+            background: #0ff;
+            color: #000;
+        }
+        #difficulty {
+            margin: 15px 0;
+            color: #0ff;
         }
     </style>
 </head>
 <body>
     <div id="ui">
-        <div>PLAYER 1: <span id="score1">0</span> | PLAYER 2: <span id="score2">0</span></div>
-        <div id="message">DEFLECT THE ORBS!</div>
+        <div>TU: <span id="score1">0</span> | AI: <span id="score2">0</span></div>
+        <div id="message">Scegli la difficoltà</div>
     </div>
+
+    <div id="menu">
+        <h2 style="color:#0ff">PONG CYBERNETICO</h2>
+        <div id="difficulty">
+            <div>DIFFICOLTÀ:</div>
+            <button class="btn" onclick="startGame('easy')">FACILE</button>
+            <button class="btn" onclick="startGame('medium')">MEDIO</button>
+            <button class="btn" onclick="startGame('hard')">DIFFICILE</button>
+        </div>
+    </div>
+
     <canvas id="gameCanvas"></canvas>
 
     <script>
-        // Game setup
+        // Configurazione iniziale
         const canvas = document.getElementById('gameCanvas');
         const ctx = canvas.getContext('2d');
-        canvas.width = 1000;
-        canvas.height = 600;
+        let gameStarted = false;
+        let aiDifficulty = 'medium';
+        
+        // Dimensioni adattive
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            player1.x = 30;
+            player2.x = canvas.width - 30 - paddleWidth;
+            player1.y = canvas.height / 2 - paddleHeight / 2;
+            player2.y = canvas.height / 2 - paddleHeight / 2;
+            
+            ballRadius = Math.max(8, Math.min(15, canvas.width / 40));
+        }
+        
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
 
-        // Audio context setup
+        // Audio
         const audioContext = new (window.AudioContext || window.webkitAudioContext)();
         
-        // Sound generator functions
-        function playTone(frequency, duration, type = 'square', volume = 0.1) {
-            const oscillator = audioContext.createOscillator();
-            const gainNode = audioContext.createGain();
-            
-            oscillator.type = type;
-            oscillator.frequency.value = frequency;
-            gainNode.gain.value = volume;
-            
-            oscillator.connect(gainNode);
-            gainNode.connect(audioContext.destination);
-            
-            oscillator.start();
-            oscillator.stop(audioContext.currentTime + duration);
-        }
-        
-        function playPaddleHit() {
-            playTone(880, 0.05, 'square', 0.2);
-        }
-        
-        function playWallHit() {
-            playTone(440, 0.1, 'sine', 0.15);
-        }
-        
-        function playScore() {
-            // Descending tone
-            const now = audioContext.currentTime;
-            const oscillator = audioContext.createOscillator();
-            const gainNode = audioContext.createGain();
-            
-            oscillator.type = 'sawtooth';
-            oscillator.frequency.setValueAtTime(880, now);
-            oscillator.frequency.exponentialRampToValueAtTime(110, now + 0.3);
-            gainNode.gain.value = 0.2;
-            
-            oscillator.connect(gainNode);
-            gainNode.connect(audioContext.destination);
-            
-            oscillator.start();
-            oscillator.stop(now + 0.3);
-        }
-        
-        function playSpawn() {
-            // Ascending arpeggio
-            const now = audioContext.currentTime;
-            const oscillator = audioContext.createOscillator();
-            const gainNode = audioContext.createGain();
-            
-            oscillator.type = 'triangle';
-            oscillator.frequency.setValueAtTime(220, now);
-            oscillator.frequency.exponentialRampToValueAtTime(440, now + 0.1);
-            oscillator.frequency.setValueAtTime(660, now + 0.1);
-            oscillator.frequency.exponentialRampToValueAtTime(880, now + 0.2);
-            gainNode.gain.value = 0.15;
-            
-            oscillator.connect(gainNode);
-            gainNode.connect(audioContext.destination);
-            
-            oscillator.start();
-            oscillator.stop(now + 0.3);
-        }
+        const sounds = {
+            paddle: () => {
+                const osc = audioContext.createOscillator();
+                const gain = audioContext.createGain();
+                osc.type = 'square';
+                osc.frequency.value = 880;
+                gain.gain.value = 0.1;
+                osc.connect(gain);
+                gain.connect(audioContext.destination);
+                osc.start();
+                osc.stop(audioContext.currentTime + 0.05);
+            },
+            wall: () => {
+                const osc = audioContext.createOscillator();
+                const gain = audioContext.createGain();
+                osc.type = 'sine';
+                osc.frequency.value = 440;
+                gain.gain.value = 0.1;
+                osc.connect(gain);
+                gain.connect(audioContext.destination);
+                osc.start();
+                osc.stop(audioContext.currentTime + 0.1);
+            },
+            score: () => {
+                const osc = audioContext.createOscillator();
+                const gain = audioContext.createGain();
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(880, audioContext.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(110, audioContext.currentTime + 0.3);
+                gain.gain.value = 0.2;
+                osc.connect(gain);
+                gain.connect(audioContext.destination);
+                osc.start();
+                osc.stop(audioContext.currentTime + 0.3);
+            }
+        };
 
         // Game state
         let score1 = 0, score2 = 0;
         const balls = [];
-        const maxBalls = 4;
+        const maxBalls = 2; // Ridotto per single-player
         let ballSpawnTimer = 0;
+        let ballRadius = 12;
         
-        // Paddles
+        // Paddle settings
         const paddleWidth = 15;
-        const paddleHeight = 100;
-        const paddleSpeed = 8;
+        const paddleHeight = Math.min(150, canvas.height * 0.2);
+        const playerSpeed = 12;
+        let aiSpeed = 8; // Sarà modificato in base alla difficoltà
         
         const player1 = {
             x: 30,
@@ -133,7 +172,59 @@
             dy: 0
         };
 
-        // Ball class
+        // AI Logic
+        function updateAI() {
+            if (balls.length === 0) return;
+            
+            // Trova la pallina più vicina all'AI
+            let closestBall = balls[0];
+            let minDistance = Infinity;
+            
+            balls.forEach(ball => {
+                const dist = ball.x - player2.x;
+                if (dist > 0 && dist < minDistance) {
+                    minDistance = dist;
+                    closestBall = ball;
+                }
+            });
+            
+            // Calcola il centro del paddle
+            const paddleCenter = player2.y + paddleHeight / 2;
+            const ballFutureY = closestBall.y + closestBall.dy * (minDistance / closestBall.dx);
+            
+            // Difficoltà varia il comportamento
+            switch(aiDifficulty) {
+                case 'easy':
+                    // Reazione lenta con errori
+                    if (Math.abs(paddleCenter - ballFutureY) > 40) {
+                        player2.dy = (ballFutureY < paddleCenter ? -aiSpeed*0.7 : aiSpeed*0.7);
+                    } else {
+                        player2.dy = 0;
+                    }
+                    break;
+                    
+                case 'medium':
+                    // Reazione media con piccoli errori
+                    if (Math.abs(paddleCenter - ballFutureY) > 30) {
+                        player2.dy = (ballFutureY < paddleCenter ? -aiSpeed : aiSpeed);
+                    } else {
+                        // 20% chance di sbagliare
+                        player2.dy = Math.random() < 0.2 ? (Math.random() > 0.5 ? -aiSpeed : aiSpeed) : 0;
+                    }
+                    break;
+                    
+                case 'hard':
+                    // Quasi perfetta con reazione rapida
+                    if (Math.abs(paddleCenter - ballFutureY) > 20) {
+                        player2.dy = (ballFutureY < paddleCenter ? -aiSpeed*1.3 : aiSpeed*1.3);
+                    } else {
+                        player2.dy = 0;
+                    }
+                    break;
+            }
+        }
+
+        // Ball physics
         class Ball {
             constructor() {
                 this.reset();
@@ -143,7 +234,7 @@
             reset() {
                 this.x = canvas.width / 2;
                 this.y = canvas.height / 2;
-                this.radius = 12;
+                this.radius = ballRadius;
                 this.dx = (Math.random() > 0.5 ? 1 : -1) * (5 + Math.random() * 2);
                 this.dy = (Math.random() * 4 - 2);
                 this.color = this.getRandomNeonColor();
@@ -161,46 +252,42 @@
                 // Wall collision
                 if (this.y - this.radius < 0 || this.y + this.radius > canvas.height) {
                     this.dy = -this.dy;
-                    playWallHit();
-                    createParticles(this.x, this.y, 5, this.color);
+                    sounds.wall();
                 }
                 
-                // Paddle collision
+                // Player collision
                 if (this.x - this.radius < player1.x + paddleWidth && 
                     this.x > player1.x && 
                     this.y > player1.y && 
                     this.y < player1.y + paddleHeight) {
                     this.dx = Math.abs(this.dx) * 1.05;
                     this.dy = (this.y - (player1.y + paddleHeight/2)) * 0.2;
-                    playPaddleHit();
-                    createParticles(this.x, this.y, 10, this.color);
+                    sounds.paddle();
                 }
                 
+                // AI collision
                 if (this.x + this.radius > player2.x && 
                     this.x < player2.x + paddleWidth && 
                     this.y > player2.y && 
                     this.y < player2.y + paddleHeight) {
                     this.dx = -Math.abs(this.dx) * 1.05;
                     this.dy = (this.y - (player2.y + paddleHeight/2)) * 0.2;
-                    playPaddleHit();
-                    createParticles(this.x, this.y, 10, this.color);
+                    sounds.paddle();
                 }
                 
                 // Scoring
                 if (this.x < 0) {
                     score2++;
                     document.getElementById('score2').textContent = score2;
-                    playScore();
+                    sounds.score();
                     this.reset();
-                    createExplosion(canvas.width / 4, canvas.height / 2, '#f0f');
                 }
                 
                 if (this.x > canvas.width) {
                     score1++;
                     document.getElementById('score1').textContent = score1;
-                    playScore();
+                    sounds.score();
                     this.reset();
-                    createExplosion(canvas.width * 3/4, canvas.height / 2, '#0ff');
                 }
             }
             
@@ -209,8 +296,6 @@
                 ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
                 ctx.fillStyle = this.color;
                 ctx.fill();
-                
-                // Glow effect
                 ctx.shadowBlur = 20;
                 ctx.shadowColor = this.color;
                 ctx.fill();
@@ -218,75 +303,35 @@
             }
         }
 
-        // Particle effects
-        function createParticles(x, y, count, color) {
-            for (let i = 0; i < count; i++) {
-                setTimeout(() => {
-                    const particle = document.createElement('div');
-                    particle.className = 'explosion';
-                    particle.style.width = '4px';
-                    particle.style.height = '4px';
-                    particle.style.background = color;
-                    particle.style.left = `${x + Math.random() * 20 - 10}px`;
-                    particle.style.top = `${y + Math.random() * 20 - 10}px`;
-                    document.body.appendChild(particle);
-                    
-                    const angle = Math.random() * Math.PI * 2;
-                    const speed = 1 + Math.random() * 3;
-                    let lifetime = 0;
-                    
-                    const animateParticle = () => {
-                        lifetime++;
-                        const px = parseFloat(particle.style.left) + Math.cos(angle) * speed;
-                        const py = parseFloat(particle.style.top) + Math.sin(angle) * speed;
-                        
-                        particle.style.left = `${px}px`;
-                        particle.style.top = `${py}px`;
-                        particle.style.opacity = 1 - lifetime / 30;
-                        
-                        if (lifetime < 30) {
-                            requestAnimationFrame(animateParticle);
-                        } else {
-                            particle.remove();
-                        }
-                    };
-                    
-                    animateParticle();
-                }, i * 30);
-            }
-        }
-
-        // Big explosion on scoring
-        function createExplosion(x, y, color) {
-            const explosion = document.createElement('div');
-            explosion.className = 'explosion';
-            explosion.style.width = '0px';
-            explosion.style.height = '0px';
-            explosion.style.background = color;
-            explosion.style.left = `${x}px`;
-            explosion.style.top = `${y}px`;
-            explosion.style.boxShadow = `0 0 20px 10px ${color}`;
-            explosion.style.transition = 'all 0.5s ease-out';
-            document.body.appendChild(explosion);
+        // Touch controls
+        function setupTouchControls() {
+            let touchY = 0;
             
-            setTimeout(() => {
-                explosion.style.width = '200px';
-                explosion.style.height = '200px';
-                explosion.style.opacity = '0';
-            }, 10);
+            canvas.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                touchY = e.touches[0].clientY;
+            });
             
-            setTimeout(() => {
-                explosion.remove();
-            }, 600);
+            canvas.addEventListener('touchmove', (e) => {
+                e.preventDefault();
+                const newY = e.touches[0].clientY;
+                const delta = newY - touchY;
+                
+                if (delta > 5) player1.dy = playerSpeed;  // Scendi
+                else if (delta < -5) player1.dy = -playerSpeed;  // Salì
+                
+                touchY = newY;
+            });
+            
+            canvas.addEventListener('touchend', () => {
+                player1.dy = 0;
+            });
         }
-
-        // Input handling
-        const keys = {};
-        document.addEventListener('keydown', (e) => keys[e.key] = true);
-        document.addEventListener('keyup', (e) => keys[e.key] = false);
 
         // Game loop
         function gameLoop() {
+            if (!gameStarted) return;
+            
             // Clear canvas
             ctx.fillStyle = 'rgba(10, 10, 30, 0.2)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -300,41 +345,35 @@
             ctx.stroke();
             ctx.setLineDash([]);
             
-            // Update paddles
-            if (keys['w']) player1.dy = -paddleSpeed;
-            else if (keys['s']) player1.dy = paddleSpeed;
-            else player1.dy = 0;
+            // Update AI
+            updateAI();
             
-            if (keys['ArrowUp']) player2.dy = -paddleSpeed;
-            else if (keys['ArrowDown']) player2.dy = paddleSpeed;
-            else player2.dy = 0;
-            
+            // Update positions
             player1.y += player1.dy;
             player2.y += player2.dy;
             
-            // Paddle boundaries
+            // Boundaries
             player1.y = Math.max(0, Math.min(canvas.height - paddleHeight, player1.y));
             player2.y = Math.max(0, Math.min(canvas.height - paddleHeight, player2.y));
             
             // Draw paddles
             ctx.fillStyle = '#0ff';
             ctx.fillRect(player1.x, player1.y, paddleWidth, paddleHeight);
-            ctx.fillStyle = '#f0f';
+            ctx.fillStyle = '#f00';
             ctx.fillRect(player2.x, player2.y, paddleWidth, paddleHeight);
             
-            // Spawn new balls occasionally
+            // Spawn balls
             ballSpawnTimer++;
             if (ballSpawnTimer > 180 && balls.length < maxBalls) {
                 balls.push(new Ball());
-                playSpawn();
                 ballSpawnTimer = 0;
-                document.getElementById('message').textContent = `BALL INCOMING! (${balls.length}/${maxBalls})`;
+                document.getElementById('message').textContent = `+1 PALLA!`;
                 setTimeout(() => {
-                    document.getElementById('message').textContent = 'DEFLECT THE ORBS!';
+                    document.getElementById('message').textContent = '';
                 }, 1000);
             }
             
-            // Update and draw balls
+            // Update balls
             balls.forEach(ball => {
                 ball.update();
                 ball.draw();
@@ -343,17 +382,33 @@
             requestAnimationFrame(gameLoop);
         }
 
-        // Start with one ball
-        balls.push(new Ball());
-        
-        // Handle audio context on first interaction (required by some browsers)
-        document.addEventListener('click', () => {
+        // Start game
+        function startGame(difficulty) {
+            aiDifficulty = difficulty;
+            
+            // Set AI speed based on difficulty
+            switch(difficulty) {
+                case 'easy': aiSpeed = 6; break;
+                case 'medium': aiSpeed = 8; break;
+                case 'hard': aiSpeed = 10; break;
+            }
+            
+            document.getElementById('menu').style.display = 'none';
+            document.getElementById('message').textContent = 'TOCCA LO SCHERMO PER MUOVERE!';
+            
+            // Resume audio context if needed
             if (audioContext.state === 'suspended') {
                 audioContext.resume();
             }
-        }, { once: true });
-        
-        gameLoop();
+            
+            setupTouchControls();
+            gameStarted = true;
+            balls.push(new Ball());
+            gameLoop();
+        }
+
+        // Initialize
+        setupTouchControls();
     </script>
 </body>
 </html>
