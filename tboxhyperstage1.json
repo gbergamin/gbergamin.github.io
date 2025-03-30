@@ -1,18 +1,20 @@
 {
   "nodes": [
     {"id": "Q1", "label": "Q1-Theatrical production", "url": "https://hyperstage.wikibase.cloud/entity/Q1"},
-    {"id": "Q3", "label": "Q3-Creative work", "url": "https://hyperstage.wikibase.cloud/entity/Q3"},
-	{"id": "Q12", "label": "Q12-PKB", "url": "https://hyperstage.wikibase.cloud/entity/Q12"},
+    {"id": "Q1n", "label": "Q1-Theatrical production", "url": "https://hyperstage.wikibase.cloud/entity/Q1"},		  
+    {"id": "Q3", "label": "Q3-Creative work", "url": "https://hyperstage.wikibase.cloud/entity/Q3"}, 
+    {"id": "Q3n", "label": "Q3-Creative work", "url": "https://hyperstage.wikibase.cloud/entity/Q3"},	  
+    {"id": "Q12", "label": "Q12-PKB", "url": "https://hyperstage.wikibase.cloud/entity/Q12"},
     {"id": "Q1445", "label": "Q1445-Agent", "url": "https://hyperstage.wikibase.cloud/entity/Q1445"},
-	{"id": "Q1155", "label": "Q1155-Documentary resource", "url": "https://hyperstage.wikibase.cloud/entity/Q1155"},
+    {"id": "Q1155", "label": "Q1155-Documentary resource", "url": "https://hyperstage.wikibase.cloud/entity/Q1155"},
     {"id": "Q1-P110-Q1155", "label": "[s:Q1-P110-Q1155]", "url": "https://hyperstage.wikibase.cloud/wiki/Special:EntityData"}
     
   ],
   "links": [
     {"source": "Q1", "target": "Q3", "label": "P6-staging of", "url": "https://hyperstage.wikibase.cloud/entity/P6"},
-	{"source": "Q1", "target": "Q1", "label": "P115-derived from TP", "url": "https://hyperstage.wikibase.cloud/entity/P115"},
-	{"source": "Q3", "target": "Q3", "label": "P113-derived from CW", "url": "https://hyperstage.wikibase.cloud/entity/P113"},
-	{"source": "Q1", "target": "Q1155", "label": "P110-docemented by", "url": "https://hyperstage.wikibase.cloud/entity/P110"},
+    {"source": "Q1", "target": "Q1n", "label": "P115-derived from TP", "url": "https://hyperstage.wikibase.cloud/entity/P115"},
+    {"source": "Q3", "target": "Q3n", "label": "P113-derived from CW", "url": "https://hyperstage.wikibase.cloud/entity/P113"},
+    {"source": "Q1", "target": "Q1155", "label": "P110-docemented by", "url": "https://hyperstage.wikibase.cloud/entity/P110"},
     {"source": "Q1", "target": "Q1-P110-Q1155", "label": "[p:P110]", "url": "https://hyperstage.wikibase.cloud/entity/P110"},
     {"source": "Q1-P110-Q1155", "target": "Q1155", "label": "[ps:P11]", "url": "https://hyperstage.wikibase.cloud/entity/P110"},
     {"source": "Q1-P110-Q1155", "target": "Q12", "label": "P14-PKB classification", "url": "https://hyperstage.wikibase.cloud/entity/P14"}
