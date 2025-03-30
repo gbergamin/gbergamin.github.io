@@ -4,5 +4,5 @@
     {"id": "Q3", "label": "Q3-Creative work", "url": "https://hyperstage.wikibase.cloud/entity/Q3"}
   ],
   "links": [
-    {"source": "Q1", "target": "Q3", "label": "P6-staging of", "url": "https://hyperstage.wikibase.cloud/entity/P6"}
+    {"source": "Q1", "target": "Q3", "label": "P6 - staging of", "url": "https://hyperstage.wikibase.cloud/entity/P6"}
   ]
