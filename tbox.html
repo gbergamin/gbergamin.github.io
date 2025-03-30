@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grafo Soggetto-Predicato-Oggetto</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0; /* Rimuovi il margine predefinito del body */
+            overflow: hidden; /* Nascondi la barra di scorrimento */
+        }
+        .node {
+            cursor: pointer;
+        }
+        .node circle {
+            fill: #69b3a2; /* Colore per i nodi */
+        }
+        .node text {
+            font-family: "Inter", sans-serif; /* Font per le etichette dei nodi */
+            font-size: 11px; /* Dimensione del font */
+            font-weight: bold; /* Grassetto */
+            fill: #333; /* Colore del testo */
+        }
+        .link {
+            stroke: #999;
+            stroke-opacity: 0.6;
+        }
+        .link-label {
+            font-family: "Inter", sans-serif; /* Font per le etichette dei link */
+            font-size: 11px; /* Dimensione del font */
+            font-weight: normal; /* Testo normale */
+            text-decoration: underline;
+            fill: #555; /* Colore del testo */
+            text-anchor: middle; /* Centra il testo */
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const width = window.innerWidth; // Larghezza della finestra del browser
+        const height = window.innerHeight; // Altezza della finestra del browser
+
+        const svg = d3.select("body").append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .call(d3.zoom().on("zoom", function(event) {
+                svg.attr("transform", event.transform);
+            }))
+            .append("g");
+
+        // Aggiungi un clipPath per limitare l'area visibile
+        svg.append("defs").append("clipPath")
+            .attr("id", "clip")
+            .append("rect")
+            .attr("width", width)
+            .attr("height", height);
+
+        // Applica il clipPath al gruppo principale
+        svg.attr("clip-path", "url(#clip)");
+
+        // Definizione del marker (freccia)
+        svg.append("defs").append("marker")
+            .attr("id", "end")
+            .attr("viewBox", "0 -5 10 10")
+            .attr("refX", 15)
+            .attr("refY", 0)
+            .attr("markerWidth", 10)
+            .attr("markerHeight", 10)
+            .attr("orient", "auto")
+            .append("path")
+            .attr("d", "M0,-5L10,0L0,5")
+            .attr("fill", "#999");
+
+        const simulation = d3.forceSimulation()
+            .force("link", d3.forceLink().id(d => d.id).distance(100)) // Aumenta la distanza tra i nodi collegati
+            .force("charge", d3.forceManyBody().strength(-200)) // Aumenta la repulsione tra i nodi
+            .force("center", d3.forceCenter(width / 2, height / 2))
+            .force("collision", d3.forceCollide().radius(30)); // Evita sovrapposizioni
+
+        // Carica i dati dal file JSON
+        d3.json("tboxhyperstage.json").then(data => {
+            const nodes = data.nodes;
+            const links = data.links;
+
+            // Creare una mappa per associare gli id ai nodi
+            const nodeMap = new Map(nodes.map(node => [node.id, node]));
+
+            // Trasformare i link per usare riferimenti agli oggetti
+            const mappedLinks = links.map(link => ({
+                source: nodeMap.get(link.source),
+                target: nodeMap.get(link.target),
+                label: link.label, // Aggiungi l'etichetta del link
+                url: link.url // Aggiungi l'URL del link
+            }));
+
+            // Disegna i link
+            const link = svg.append("g")
+                .selectAll("line")
+                .data(mappedLinks)
+                .enter().append("line")
+                .attr("class", "link")
+                .attr("marker-end", "url(#end)"); // Applica il marker
+
+            // Aggiungi etichette ai link
+            const linkLabels = svg.append("g")
+                .selectAll("text")
+                .data(mappedLinks)
+                .enter().append("text")
+                .attr("class", "link-label")
+                .text(d => d.label)
+                .on("click", (event, d) => {
+                    if (d.url) window.open(d.url, "_blank"); // Apri l'URL se esiste
+                });
+
+            // Disegna i nodi
+            const node = svg.append("g")
+                .selectAll("g")
+                .data(nodes)
+                .enter().append("g")
+                .attr("class", "node")
+                .call(d3.drag()
+                    .on("start", dragstarted)
+                    .on("drag", dragged)
+                    .on("end", dragended))
+                .on("click", (event, d) => {
+                    if (d.url) window.open(d.url, "_blank"); // Apri l'URL se esiste
+                });
+
+            node.append("circle")
+                .attr("r", 10);
+
+            node.append("text")
+                .attr("dx", 12)
+                .attr("dy", ".35em")
+                .text(d => d.label);
+
+            // Inizializza le posizioni dei nodi in modo più distribuito
+            nodes.forEach((node, i) => {
+                node.x = width / 2 + (Math.random() - 0.5) * 200;
+                node.y = height / 2 + (Math.random() - 0.5) * 200;
+            });
+
+            // Aggiorna la posizione degli elementi durante la simulazione
+            simulation.nodes(nodes).on("tick", () => {
+                link
+                    .attr("x1", d => d.source.x)
+                    .attr("y1", d => d.source.y)
+                    .attr("x2", d => d.target.x)
+                    .attr("y2", d => d.target.y);
+
+                // Posiziona le etichette dei link al centro dei link
+                linkLabels
+                    .attr("x", d => (d.source.x + d.target.x) / 2)
+                    .attr("y", d => (d.source.y + d.target.y) / 2);
+
+                node
+                    .attr("transform", d => `translate(${d.x},${d.y})`);
+            });
+
+            simulation.force("link").links(mappedLinks);
+        }).catch(error => {
+            console.error("Errore nel caricamento del file JSON:", error);
+        });
+
+        function dragstarted(event, d) {
+            if (!event.active) simulation.alphaTarget(0.3).restart();
+            d.fx = d.x;
+            d.fy = d.y;
+        }
+
+        function dragged(event, d) {
+            d.fx = event.x;
+            d.fy = event.y;
+        }
+
+        function dragended(event, d) {
+            if (!event.active) simulation.alphaTarget(0);
+            // Mantieni la posizione del nodo dopo il rilascio
+            d.fx = event.x;
+            d.fy = event.y;
+        }
+    </script>
+</body>
+</html>
