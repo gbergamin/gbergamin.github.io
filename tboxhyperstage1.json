@@ -15,8 +15,8 @@
     {"source": "Q1", "target": "Q1n", "label": "P115-derived from TP", "url": "https://hyperstage.wikibase.cloud/entity/P115"},
     {"source": "Q3", "target": "Q3n", "label": "P113-derived from CW", "url": "https://hyperstage.wikibase.cloud/entity/P113"},
     {"source": "Q1", "target": "Q1155", "label": "P110-documented by", "url": "https://hyperstage.wikibase.cloud/entity/P110"},
-    {"source": "Q1", "target": "Q1455", "label": "P151-contribution by", "url": "https://hyperstage.wikibase.cloud/entity/P151"},
-    {"source": "Q3", "target": "Q1455", "label": "P151-contribution by", "url": "https://hyperstage.wikibase.cloud/entity/P151"}
+    {"source": "Q1", "target": "Q1445", "label": "P151-contribution by", "url": "https://hyperstage.wikibase.cloud/entity/P151"},
+    {"source": "Q3", "target": "Q1445", "label": "P151-contribution by", "url": "https://hyperstage.wikibase.cloud/entity/P151"}
     
     
   ]
