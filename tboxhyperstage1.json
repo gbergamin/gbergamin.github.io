@@ -11,8 +11,8 @@
   "links": [
     {"source": "Q1", "target": "Q2", "label": "P6-staging of", "url": "https://hyperstage.wikibase.cloud/entity/P6"},
     {"source": "Q1", "target": "Q1355", "label": "P110-documented by", "url": "https://hyperstage.wikibase.cloud/entity/P110"},
-    {"source": "Q1", "target": "Q1445", "label": "P151-contribution by", "url": "https://hyperstage.wikibase.cloud/entity/P151"},
-    {"source": "Q2", "target": "Q1445", "label": "P151-contribution by", "url": "https://hyperstage.wikibase.cloud/entity/P151"},
+    {"source": "Q1", "target": "Q1445", "label": "P165-contribution by", "url": "https://hyperstage.wikibase.cloud/entity/P165"},
+    {"source": "Q2", "target": "Q1445", "label": "P165-contribution by", "url": "https://hyperstage.wikibase.cloud/entity/P165"},
     {"source": "Q1", "target": "Q1-P110-Q1355", "label": "[p:P110]", "url": "https://hyperstage.wikibase.cloud/entity/P110"},
     {"source": "Q1-P110-Q1355", "target": "Q1355", "label": "[ps:P110]", "url": "https://hyperstage.wikibase.cloud/entity/P110"},
     {"source": "Q1-P110-Q1355", "target": "Q12", "label": "P14-PKB classification", "url": "https://hyperstage.wikibase.cloud/entity/P14"}
