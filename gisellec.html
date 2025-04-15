@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giselle</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: "Inter", sans-serif;
+        }
+        .node {
+            cursor: pointer;
+        }
+        .node circle {
+            fill: #69b3a2;
+        }
+        .node text {
+            font-family: "Inter", sans-serif;
+            font-size: 11px;
+            font-weight: bold;
+            fill: #333;
+        }
+        .link {
+            stroke: #999;
+            stroke-opacity: 0.6;
+        }
+        .link-label {
+            font-family: "Inter", sans-serif;
+            font-size: 11px;
+            font-weight: normal;
+            text-decoration: underline;
+            fill: #555;
+            text-anchor: middle;
+            cursor: pointer;
+        }
+        .controls {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        button {
+            padding: 8px 12px;
+            margin: 5px;
+            background: #69b3a2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: "Inter", sans-serif;
+        }
+        button:hover {
+            background: #4a9080;
+        }
+        .status {
+            font-size: 12px;
+            margin-top: 5px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <button id="freezeBtn">Congela Posizioni</button>
+        <button id="resetBtn">Reset Posizioni</button>
+        <div id="status" class="status"></div>
+    </div>
+
+    <script>
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        let nodesData = [];
+        let linksData = [];
+        let simulation;
+        let link, linkLabels, node;
+
+        const svg = d3.select("body").append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .call(d3.zoom().on("zoom", function(event) {
+                svg.attr("transform", event.transform);
+            }))
+            .append("g");
+
+        svg.append("defs").append("clipPath")
+            .attr("id", "clip")
+            .append("rect")
+            .attr("width", width)
+            .attr("height", height);
+
+        svg.attr("clip-path", "url(#clip)");
+
+        svg.append("defs").append("marker")
+            .attr("id", "end")
+            .attr("viewBox", "0 -5 10 10")
+            .attr("refX", 15)
+            .attr("refY", 0)
+            .attr("markerWidth", 10)
+            .attr("markerHeight", 10)
+            .attr("orient", "auto")
+            .append("path")
+            .attr("d", "M0,-5L10,0L0,5")
+            .attr("fill", "#999");
+
+        // Funzione per salvare le posizioni dei nodi
+        function saveNodePositions() {
+            const positions = {};
+            nodesData.forEach(node => {
+                positions[node.id] = { x: node.x, y: node.y };
+            });
+            localStorage.setItem('giselleNodePositions', JSON.stringify(positions));
+            document.getElementById('status').textContent = 'Posizioni salvate!';
+            setTimeout(() => {
+                document.getElementById('status').textContent = '';
+            }, 2000);
+        }
+
+        // Funzione per caricare le posizioni salvate
+        function loadSavedPositions() {
+            const savedPositions = localStorage.getItem('giselleNodePositions');
+            if (savedPositions) {
+                const positions = JSON.parse(savedPositions);
+                return positions;
+            }
+            return null;
+        }
+
+        // Funzione per rimuovere le posizioni salvate
+        function resetPositions() {
+            localStorage.removeItem('giselleNodePositions');
+            document.getElementById('status').textContent = 'Posizioni resettate. Ricarica la pagina.';
+            setTimeout(() => {
+                location.reload();
+            }, 1500);
+        }
+
+        // Inizializza la simulazione
+        function initializeSimulation() {
+            simulation = d3.forceSimulation()
+                .force("link", d3.forceLink().id(d => d.id).distance(100))
+                .force("charge", d3.forceManyBody().strength(-200))
+                .force("center", d3.forceCenter(width / 2, height / 2))
+                .force("collision", d3.forceCollide().radius(30));
+        }
+
+        // Funzione per creare il grafo
+        function createGraph(data) {
+            nodesData = data.nodes;
+            linksData = data.links;
+
+            const nodeMap = new Map(nodesData.map(node => [node.id, node]));
+
+            const mappedLinks = linksData.map(link => ({
+                source: nodeMap.get(link.source),
+                target: nodeMap.get(link.target),
+                label: link.label,
+                url: link.url
+            }));
+
+            // Carica le posizioni salvate se disponibili
+            const savedPositions = loadSavedPositions();
+            if (savedPositions) {
+                nodesData.forEach(node => {
+                    if (savedPositions[node.id]) {
+                        node.fx = savedPositions[node.id].x;
+                        node.fy = savedPositions[node.id].y;
+                    }
+                });
+                document.getElementById('status').textContent = 'Posizioni caricate!';
+                setTimeout(() => {
+                    document.getElementById('status').textContent = '';
+                }, 2000);
+            } else {
+                // Inizializza posizioni casuali se non ci sono posizioni salvate
+                nodesData.forEach((node, i) => {
+                    node.x = width / 2 + (Math.random() - 0.5) * 200;
+                    node.y = height / 2 + (Math.random() - 0.5) * 200;
+                });
+            }
+
+            // Disegna i link
+            link = svg.append("g")
+                .selectAll("line")
+                .data(mappedLinks)
+                .enter().append("line")
+                .attr("class", "link")
+                .attr("marker-end", "url(#end)");
+
+            // Aggiungi etichette ai link
+            linkLabels = svg.append("g")
+                .selectAll("text")
+                .data(mappedLinks)
+                .enter().append("text")
+                .attr("class", "link-label")
+                .text(d => d.label)
+                .on("click", (event, d) => {
+                    if (d.url) window.open(d.url, "_blank");
+                });
+
+            // Disegna i nodi
+            node = svg.append("g")
+                .selectAll("g")
+                .data(nodesData)
+                .enter().append("g")
+                .attr("class", "node")
+                .call(d3.drag()
+                    .on("start", dragstarted)
+                    .on("drag", dragged)
+                    .on("end", dragended))
+                .on("click", (event, d) => {
+                    if (d.url) window.open(d.url, "_blank");
+                });
+
+            node.append("circle")
+                .attr("r", 10);
+
+            node.append("text")
+                .attr("dx", 12)
+                .attr("dy", ".35em")
+                .text(d => d.label);
+
+            // Aggiorna la posizione degli elementi durante la simulazione
+            simulation
+                .nodes(nodesData)
+                .on("tick", () => {
+                    link
+                        .attr("x1", d => d.source.x)
+                        .attr("y1", d => d.source.y)
+                        .attr("x2", d => d.target.x)
+                        .attr("y2", d => d.target.y);
+
+                    linkLabels
+                        .attr("x", d => (d.source.x + d.target.x) / 2)
+                        .attr("y", d => (d.source.y + d.target.y) / 2);
+
+                    node
+                        .attr("transform", d => `translate(${d.x},${d.y})`);
+                });
+
+            simulation.force("link").links(mappedLinks);
+        }
+
+        function dragstarted(event, d) {
+            if (!event.active) simulation.alphaTarget(0.3).restart();
+            d.fx = d.x;
+            d.fy = d.y;
+        }
+
+        function dragged(event, d) {
+            d.fx = event.x;
+            d.fy = event.y;
+        }
+
+        function dragended(event, d) {
+            if (!event.active) simulation.alphaTarget(0);
+            d.fx = event.x;
+            d.fy = event.y;
+        }
+
+        // Inizializza la simulazione
+        initializeSimulation();
+
+        // Carica i dati e crea il grafo
+        d3.json("giselle.json").then(data => {
+            createGraph(data);
+        }).catch(error => {
+            console.error("Errore nel caricamento del file JSON:", error);
+            
+            // In caso di errore, prova a utilizzare i dati incorporati
+            try {
+                const data = {
+                    "nodes": [
+                        {"id": "Q1", "label": "Q1-Theatrical production", "url": "https://hyperstage.wikibase.cloud/entity/Q1"},
+                        {"id": "Q2", "label": "Q2-Theatrical creative work", "url": "https://hyperstage.wikibase.cloud/entity/Q2"},
+                        {"id": "Q1231", "label": "Q1231-Giselle W1841", "url": "https://hyperstage.wikibase.cloud/entity/Q1231"},
+                        {"id": "Q1317", "label": "Q1317-Giselle W1950", "url": "https://hyperstage.wikibase.cloud/entity/Q1317"},
+                        {"id": "Q1305", "label": "Q1305-Giselle W1982", "url": "https://hyperstage.wikibase.cloud/entity/Q1305"},
+                        {"id": "Q386", "label": "Q386-Giselle P1982", "url": "https://hyperstage.wikibase.cloud/entity/Q386"},
+                        {"id": "Q723", "label": "Q723-Giselle P2022", "url": "https://hyperstage.wikibase.cloud/entity/Q723"}
+                    ],
+                    "links": [
+                        {"source": "Q386", "target": "Q1", "label": "P1-instance of", "url": "https://hyperstage.wikibase.cloud/entity/P1"},
+                        {"source": "Q723", "target": "Q1", "label": "P1-instance of", "url": "https://hyperstage.wikibase.cloud/entity/P1"},
+                        {"source": "Q1317", "target": "Q2", "label": "P1-instance of", "url": "https://hyperstage.wikibase.cloud/entity/P1"},
+                        {"source": "Q1231", "target": "Q2", "label": "P1-instance of", "url": "https://hyperstage.wikibase.cloud/entity/P1"},
+                        {"source": "Q1305", "target": "Q2", "label": "P1-instance of", "url": "https://hyperstage.wikibase.cloud/entity/P1"},
+                        {"source": "Q723", "target": "Q386", "label": "P115-P derived from P", "url": "https://hyperstage.wikibase.cloud/entity/P115"},
+                        {"source": "Q386", "target": "Q1231", "label": "P6-staging of", "url": "https://hyperstage.wikibase.cloud/entity/P6"},
+                        {"source": "Q723", "target": "Q1317", "label": "P6-staging of", "url": "https://hyperstage.wikibase.cloud/entity/P6"},
+                        {"source": "Q1317", "target": "Q1231", "label": "P144-W derived from W", "url": "https://hyperstage.wikibase.cloud/entity/P14"},
+                        {"source": "Q1305", "target": "Q1231", "label": "P144-W derived from W", "url": "https://hyperstage.wikibase.cloud/entity/P14"}
+                    ]
+                };
+                createGraph(data);
+            } catch(e) {
+                console.error("Impossibile utilizzare i dati incorporati:", e);
+            }
+        });
+
+        // Aggiungi gestori eventi per i pulsanti
+        document.getElementById('freezeBtn').addEventListener('click', saveNodePositions);
+        document.getElementById('resetBtn').addEventListener('click', resetPositions);
+    </script>
+</body>
+</html>
