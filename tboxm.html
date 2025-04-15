@@ -634,7 +634,9 @@
         }).catch(error => {
             console.error("Errore nel caricamento del file JSON:", error);
             
-            // In caso di errore, prova a utilizzare i dati incorporati
+            // In caso di errore, prova a utilizzare i dati incorporati 
+            //per ora asteriscato
+            /*
             try {
                 const data = {
                     "nodes": [
@@ -663,6 +665,8 @@
             } catch(e) {
                 console.error("Impossibile utilizzare i dati incorporati:", e);
             }
+            */
+            //fino a qui
         });
 
         // Aggiungi gestori eventi per i pulsanti
