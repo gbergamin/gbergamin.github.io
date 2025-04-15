@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giselle</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: "Inter", sans-serif;
+        }
+        .node {
+            cursor: pointer;
+        }
+        .node circle {
+            fill: #69b3a2;
+        }
+        .node text {
+            font-family: "Inter", sans-serif;
+            font-size: 11px;
+            font-weight: bold;
+            fill: #333;
+        }
+        .link {
+            stroke: #999;
+            stroke-opacity: 0.6;
+        }
+        .link-label {
+            font-family: "Inter", sans-serif;
+            font-size: 11px;
+            font-weight: normal;
+            text-decoration: underline;
+            fill: #555;
+            text-anchor: middle;
+            cursor: pointer;
+        }
+        .controls {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            max-width: 300px;
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        }
+        .controls.hidden {
+            transform: translateX(calc(100% + 10px));
+            opacity: 0;
+        }
+        button {
+            padding: 8px 12px;
+            margin: 5px;
+            background: #69b3a2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: "Inter", sans-serif;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: #4a9080;
+        }
+        .status {
+            font-size: 12px;
+            margin-top: 10px;
+            padding: 5px;
+            color: #333;
+            background: #f5f5f5;
+            border-radius: 3px;
+            min-height: 1.2em;
+        }
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .button-group > button {
+            flex: 1 0 auto;
+            margin: 4px;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        .file-upload-label {
+            display: inline-block;
+            padding: 8px 12px;
+            margin: 5px;
+            background: #5d7fac;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: "Inter", sans-serif;
+            text-align: center;
+            transition: background 0.2s;
+        }
+        .file-upload-label:hover {
+            background: #4a678c;
+        }
+        .hidden {
+            display: none;
+        }
+        #layoutName {
+            width: 100%;
+            padding: 6px;
+            margin: 5px 0 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: "Inter", sans-serif;
+        }
+        .layout-list {
+            margin-top: 10px;
+            max-height: 100px;
+            overflow-y: auto;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            padding: 5px;
+            background: #fff;
+        }
+        .layout-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 3px;
+            border-bottom: 1px solid #eee;
+        }
+        .layout-item:last-child {
+            border-bottom: none;
+        }
+        .layout-name {
+            flex-grow: 1;
+            padding: 2px 5px;
+            cursor: pointer;
+        }
+        .layout-name:hover {
+            background: #f0f0f0;
+        }
+        .layout-delete {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 10px;
+            padding: 2px 5px;
+        }
+        .layout-delete:hover {
+            background: #ff4040;
+        }
+        .section-title {
+            font-weight: bold;
+            margin: 10px 0 5px 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 3px;
+        }
+        #toggleMenu {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1001;
+            padding: 8px 12px;
+            background: #69b3a2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: "Inter", sans-serif;
+            transition: background 0.2s, right 0.3s ease-in-out;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        }
+        #toggleMenu:hover {
+            background: #4a9080;
+        }
+        #toggleMenu.menu-visible {
+            right: 320px;
+        }
+    </style>
+</head>
+<body>
+    <button id="toggleMenu">◀ Nascondi Menu</button>
+    
+    <div class="controls">
+        <div class="section-title">Salvataggio Locale</div>
+        <input type="text" id="layoutName" placeholder="Nome layout (es. 'Layout principale')">
+        <div class="button-group">
+            <button id="saveBtn">Salva Layout</button>
+            <button id="resetBtn">Reset Layout</button>
+        </div>
+
+        <div class="section-title">Layout Salvati</div>
+        <div id="savedLayouts" class="layout-list">
+            <!-- Layout salvati verranno inseriti qui -->
+        </div>
+
+        <div class="section-title">Importa/Esporta</div>
+        <div class="button-group">
+            <label for="importFile" class="file-upload-label">Importa Layout</label>
+            <input type="file" id="importFile" accept=".json">
+            <button id="exportBtn">Esporta Layout</button>
+        </div>
+
+        <div id="status" class="status"></div>
+    </div>
+
+    <script>
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        let nodesData = [];
+        let linksData = [];
+        let simulation;
+        let link, linkLabels, node;
+        const LAYOUTS_KEY = 'giselleLayouts';
+        const CURRENT_LAYOUT_KEY = 'giselleCurrentLayout';
+        const MENU_STATE_KEY = 'giselleMenuState';
+
+        const svg = d3.select("body").append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .call(d3.zoom().on("zoom", function(event) {
+                svg.attr("transform", event.transform);
+            }))
+            .append("g");
+
+        svg.append("defs").append("clipPath")
+            .attr("id", "clip")
+            .append("rect")
+            .attr("width", width)
+            .attr("height", height);
+
+        svg.attr("clip-path", "url(#clip)");
+
+        svg.append("defs").append("marker")
+            .attr("id", "end")
+            .attr("viewBox", "0 -5 10 10")
+            .attr("refX", 15)
+            .attr("refY", 0)
+            .attr("markerWidth", 10)
+            .attr("markerHeight", 10)
+            .attr("orient", "auto")
+            .append("path")
+            .attr("d", "M0,-5L10,0L0,5")
+            .attr("fill", "#999");
+
+        // Gestione del menu nascondibile
+        const toggleMenuBtn = document.getElementById('toggleMenu');
+        const controlsPanel = document.querySelector('.controls');
+        
+        // Carica lo stato del menu dalla memoria locale
+        let menuVisible = localStorage.getItem(MENU_STATE_KEY) !== 'hidden';
+        
+        // Imposta lo stato iniziale del menu
+        if (!menuVisible) {
+            controlsPanel.classList.add('hidden');
+            toggleMenuBtn.textContent = '▶ Mostra Menu';
+            toggleMenuBtn.classList.remove('menu-visible');
+        } else {
+            toggleMenuBtn.classList.add('menu-visible');
+        }
+        
+        toggleMenuBtn.addEventListener('click', function() {
+            menuVisible = !controlsPanel.classList.contains('hidden');
+            
+            if (menuVisible) {
+                // Nascondi il menu
+                controlsPanel.classList.add('hidden');
+                toggleMenuBtn.textContent = '▶ Mostra Menu';
+                toggleMenuBtn.classList.remove('menu-visible');
+                localStorage.setItem(MENU_STATE_KEY, 'hidden');
+            } else {
+                // Mostra il menu
+                controlsPanel.classList.remove('hidden');
+                toggleMenuBtn.textContent = '◀ Nascondi Menu';
+                toggleMenuBtn.classList.add('menu-visible');
+                localStorage.setItem(MENU_STATE_KEY, 'visible');
+            }
+        });
+
+        // Funzione per mostrare messaggi di stato
+        function showStatus(message, isError = false) {
+            const statusEl = document.getElementById('status');
+            statusEl.textContent = message;
+            statusEl.style.color = isError ? '#cc0000' : '#333';
+            statusEl.style.background = isError ? '#ffecec' : '#f5f5f5';
+            
+            // Pulisci dopo 3 secondi
+            setTimeout(() => {
+                statusEl.textContent = '';
+                statusEl.style.color = '#333';
+                statusEl.style.background = '#f5f5f5';
+            }, 3000);
+        }
+
+        // Recupera tutti i layout salvati
+        function getSavedLayouts() {
+            const layouts = localStorage.getItem(LAYOUTS_KEY);
+            return layouts ? JSON.parse(layouts) : {};
+        }
+
+        // Salva un nuovo layout
+        function saveLayout() {
+            const layoutName = document.getElementById('layoutName').value.trim();
+            if (!layoutName) {
+                showStatus('Inserisci un nome per il layout!', true);
+                return;
+            }
+
+            const positions = {};
+            nodesData.forEach(node => {
+                positions[node.id] = { x: node.fx || node.x, y: node.fy || node.y };
+            });
+
+            const layouts = getSavedLayouts();
+            layouts[layoutName] = {
+                positions: positions,
+                timestamp: new Date().toISOString()
+            };
+
+            localStorage.setItem(LAYOUTS_KEY, JSON.stringify(layouts));
+            localStorage.setItem(CURRENT_LAYOUT_KEY, layoutName);
+            
+            showStatus(`Layout "${layoutName}" salvato!`);
+            updateLayoutsList();
+        }
+
+        // Carica un layout specifico
+        function loadLayout(layoutName) {
+            const layouts = getSavedLayouts();
+            if (!layouts[layoutName]) {
+                showStatus(`Layout "${layoutName}" non trovato!`, true);
+                return;
+            }
+
+            const positions = layouts[layoutName].positions;
+            nodesData.forEach(node => {
+                if (positions[node.id]) {
+                    node.fx = positions[node.id].x;
+                    node.fy = positions[node.id].y;
+                    node.x = positions[node.id].x;
+                    node.y = positions[node.id].y;
+                }
+            });
+
+            localStorage.setItem(CURRENT_LAYOUT_KEY, layoutName);
+            simulation.alpha(0.3).restart();
+            showStatus(`Layout "${layoutName}" caricato!`);
+            document.getElementById('layoutName').value = layoutName;
+        }
+
+        // Elimina un layout salvato
+        function deleteLayout(layoutName) {
+            const layouts = getSavedLayouts();
+            if (layouts[layoutName]) {
+                delete layouts[layoutName];
+                localStorage.setItem(LAYOUTS_KEY, JSON.stringify(layouts));
+                
+                // Se è il layout corrente, rimuovi anche quello
+                const currentLayout = localStorage.getItem(CURRENT_LAYOUT_KEY);
+                if (currentLayout === layoutName) {
+                    localStorage.removeItem(CURRENT_LAYOUT_KEY);
+                }
+                
+                showStatus(`Layout "${layoutName}" eliminato!`);
+                updateLayoutsList();
+            }
+        }
+
+        // Aggiorna la lista dei layout salvati
+        function updateLayoutsList() {
+            const layoutsContainer = document.getElementById('savedLayouts');
+            layoutsContainer.innerHTML = '';
+            
+            const layouts = getSavedLayouts();
+            const layoutNames = Object.keys(layouts);
+            
+            if (layoutNames.length === 0) {
+                layoutsContainer.innerHTML = '<div style="padding: 5px; color: #888;">Nessun layout salvato</div>';
+                return;
+            }
+            
+            // Ordina per data di modifica (più recente prima)
+            layoutNames.sort((a, b) => {
+                const timeA = new Date(layouts[a].timestamp).getTime();
+                const timeB = new Date(layouts[b].timestamp).getTime();
+                return timeB - timeA;
+            });
+            
+            layoutNames.forEach(name => {
+                const item = document.createElement('div');
+                item.className = 'layout-item';
+                
+                const nameSpan = document.createElement('span');
+                nameSpan.className = 'layout-name';
+                nameSpan.textContent = name;
+                nameSpan.onclick = () => loadLayout(name);
+                
+                const deleteBtn = document.createElement('button');
+                deleteBtn.className = 'layout-delete';
+                deleteBtn.textContent = 'X';
+                deleteBtn.onclick = (e) => {
+                    e.stopPropagation();
+                    if (confirm(`Sei sicuro di voler eliminare il layout "${name}"?`)) {
+                        deleteLayout(name);
+                    }
+                };
+                
+                item.appendChild(nameSpan);
+                item.appendChild(deleteBtn);
+                layoutsContainer.appendChild(item);
+            });
+        }
+
+        // Esporta il layout corrente
+        function exportCurrentLayout() {
+            const layoutName = document.getElementById('layoutName').value.trim() || 'Layout_Giselle';
+            
+            const positions = {};
+            nodesData.forEach(node => {
+                positions[node.id] = { x: node.fx || node.x, y: node.fy || node.y };
+            });
+            
+            const exportData = {
+                name: layoutName,
+                timestamp: new Date().toISOString(),
+                positions: positions
+            };
+            
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportData, null, 2));
+            const downloadAnchorNode = document.createElement('a');
+            downloadAnchorNode.setAttribute("href", dataStr);
+            downloadAnchorNode.setAttribute("download", layoutName + ".json");
+            document.body.appendChild(downloadAnchorNode);
+            downloadAnchorNode.click();
+            downloadAnchorNode.remove();
+            
+            showStatus("Layout esportato con successo!");
+        }
+
+        // Importa un layout da file
+        function importLayout(file) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                try {
+                    const importedData = JSON.parse(event.target.result);
+                    
+                    if (!importedData.positions) {
+                        throw new Error("Formato file non valido");
+                    }
+                    
+                    // Aggiungi al localStorage
+                    const layouts = getSavedLayouts();
+                    const name = importedData.name || "Layout importato " + new Date().toLocaleString();
+                    
+                    layouts[name] = {
+                        positions: importedData.positions,
+                        timestamp: importedData.timestamp || new Date().toISOString()
+                    };
+                    
+                    localStorage.setItem(LAYOUTS_KEY, JSON.stringify(layouts));
+                    showStatus(`Layout "${name}" importato con successo!`);
+                    updateLayoutsList();
+                    
+                    // Carica immediatamente
+                    loadLayout(name);
+                    
+                } catch (e) {
+                    showStatus("Errore durante l'importazione: " + e.message, true);
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        // Reset layout
+        function resetLayout() {
+            if (!confirm("Sei sicuro di voler reimpostare il layout? I nodi torneranno alle posizioni iniziali.")) {
+                return;
+            }
+            
+            nodesData.forEach(node => {
+                node.fx = null;
+                node.fy = null;
+                node.x = width / 2 + (Math.random() - 0.5) * 200;
+                node.y = height / 2 + (Math.random() - 0.5) * 200;
+            });
+            
+            localStorage.removeItem(CURRENT_LAYOUT_KEY);
+            simulation.alpha(1).restart();
+            showStatus("Layout reimpostato!");
+        }
+
+        // Inizializza la simulazione
+        function initializeSimulation() {
+            simulation = d3.forceSimulation()
+                .force("link", d3.forceLink().id(d => d.id).distance(100))
+                .force("charge", d3.forceManyBody().strength(-200))
+                .force("center", d3.forceCenter(width / 2, height / 2))
+                .force("collision", d3.forceCollide().radius(30));
+        }
+
+        // Funzione per creare il grafo
+        function createGraph(data) {
+            nodesData = data.nodes;
+            linksData = data.links;
+
+            const nodeMap = new Map(nodesData.map(node => [node.id, node]));
+
+            const mappedLinks = linksData.map(link => ({
+                source: nodeMap.get(link.source),
+                target: nodeMap.get(link.target),
+                label: link.label,
+                url: link.url
+            }));
+
+            // Carica il layout corrente o inizializza posizioni casuali
+            const currentLayoutName = localStorage.getItem(CURRENT_LAYOUT_KEY);
+            if (currentLayoutName) {
+                const layouts = getSavedLayouts();
+                if (layouts[currentLayoutName]) {
+                    const positions = layouts[currentLayoutName].positions;
+                    nodesData.forEach(node => {
+                        if (positions[node.id]) {
+                            node.fx = positions[node.id].x;
+                            node.fy = positions[node.id].y;
+                            node.x = positions[node.id].x;
+                            node.y = positions[node.id].y;
+                        } else {
+                            node.x = width / 2 + (Math.random() - 0.5) * 200;
+                            node.y = height / 2 + (Math.random() - 0.5) * 200;
+                        }
+                    });
+                    document.getElementById('layoutName').value = currentLayoutName;
+                    showStatus(`Layout "${currentLayoutName}" caricato!`);
+                }
+            } else {
+                nodesData.forEach((node, i) => {
+                    node.x = width / 2 + (Math.random() - 0.5) * 200;
+                    node.y = height / 2 + (Math.random() - 0.5) * 200;
+                });
+            }
+
+            // Disegna i link
+            link = svg.append("g")
+                .selectAll("line")
+                .data(mappedLinks)
+                .enter().append("line")
+                .attr("class", "link")
+                .attr("marker-end", "url(#end)");
+
+            // Aggiungi etichette ai link
+            linkLabels = svg.append("g")
+                .selectAll("text")
+                .data(mappedLinks)
+                .enter().append("text")
+                .attr("class", "link-label")
+                .text(d => d.label)
+                .on("click", (event, d) => {
+                    if (d.url) window.open(d.url, "_blank");
+                });
+
+            // Disegna i nodi
+            node = svg.append("g")
+                .selectAll("g")
+                .data(nodesData)
+                .enter().append("g")
+                .attr("class", "node")
+                .call(d3.drag()
+                    .on("start", dragstarted)
+                    .on("drag", dragged)
+                    .on("end", dragended))
+                .on("click", (event, d) => {
+                    if (d.url) window.open(d.url, "_blank");
+                });
+
+            node.append("circle")
+                .attr("r", 10);
+
+            node.append("text")
+                .attr("dx", 12)
+                .attr("dy", ".35em")
+                .text(d => d.label);
+
+            // Aggiorna la posizione degli elementi durante la simulazione
+            simulation
+                .nodes(nodesData)
+                .on("tick", () => {
+                    link
+                        .attr("x1", d => d.source.x)
+                        .attr("y1", d => d.source.y)
+                        .attr("x2", d => d.target.x)
+                        .attr("y2", d => d.target.y);
+
+                    linkLabels
+                        .attr("x", d => (d.source.x + d.target.x) / 2)
+                        .attr("y", d => (d.source.y + d.target.y) / 2);
+
+                    node
+                        .attr("transform", d => `translate(${d.x},${d.y})`);
+                });
+
+            simulation.force("link").links(mappedLinks);
+            
+            // Aggiorna la lista dei layout
+            updateLayoutsList();
+        }
+
+        function dragstarted(event, d) {
+            if (!event.active) simulation.alphaTarget(0.3).restart();
+            d.fx = d.x;
+            d.fy = d.y;
+        }
+
+        function dragged(event, d) {
+            d.fx = event.x;
+            d.fy = event.y;
+        }
+
+        function dragended(event, d) {
+            if (!event.active) simulation.alphaTarget(0);
+            d.fx = event.x;
+            d.fy = event.y;
+        }
+
+        // Inizializza la simulazione
+        initializeSimulation();
+
+        // Carica i dati e crea il grafo
+        d3.json("giselle.json").then(data => {
+            createGraph(data);
+        }).catch(error => {
+            console.error("Errore nel caricamento del file JSON:", error);
+            
+            // In caso di errore, prova a utilizzare i dati incorporati
+            try {
+                const data = {
+                    "nodes": [
+                        {"id": "Q1", "label": "Q1-Theatrical production", "url": "https://hyperstage.wikibase.cloud/entity/Q1"},
+                        {"id": "Q2", "label": "Q2-Theatrical creative work", "url": "https://hyperstage.wikibase.cloud/entity/Q2"},
+                        {"id": "Q1231", "label": "Q1231-Giselle W1841", "url": "https://hyperstage.wikibase.cloud/entity/Q1231"},
+                        {"id": "Q1317", "label": "Q1317-Giselle W1950", "url": "https://hyperstage.wikibase.cloud/entity/Q1317"},
+                        {"id": "Q1305", "label": "Q1305-Giselle W1982", "url": "https://hyperstage.wikibase.cloud/entity/Q1305"},
+                        {"id": "Q386", "label": "Q386-Giselle P1982", "url": "https://hyperstage.wikibase.cloud/entity/Q386"},
+                        {"id": "Q723", "label": "Q723-Giselle P2022", "url": "https://hyperstage.wikibase.cloud/entity/Q723"}
+                    ],
+                    "links": [
+                        {"source": "Q386", "target": "Q1", "label": "P1-instance of", "url": "https://hyperstage.wikibase.cloud/entity/P1"},
+                        {"source": "Q723", "target": "Q1", "label": "P1-instance of", "url": "https://hyperstage.wikibase.cloud/entity/P1"},
+                        {"source": "Q1317", "target": "Q2", "label": "P1-instance of", "url": "https://hyperstage.wikibase.cloud/entity/P1"},
+                        {"source": "Q1231", "target": "Q2", "label": "P1-instance of", "url": "https://hyperstage.wikibase.cloud/entity/P1"},
+                        {"source": "Q1305", "target": "Q2", "label": "P1-instance of", "url": "https://hyperstage.wikibase.cloud/entity/P1"},
+                        {"source": "Q723", "target": "Q386", "label": "P115-P derived from P", "url": "https://hyperstage.wikibase.cloud/entity/P115"},
+                        {"source": "Q386", "target": "Q1231", "label": "P6-staging of", "url": "https://hyperstage.wikibase.cloud/entity/P6"},
+                        {"source": "Q723", "target": "Q1317", "label": "P6-staging of", "url": "https://hyperstage.wikibase.cloud/entity/P6"},
+                        {"source": "Q1317", "target": "Q1231", "label": "P144-W derived from W", "url": "https://hyperstage.wikibase.cloud/entity/P14"},
+                        {"source": "Q1305", "target": "Q1231", "label": "P144-W derived from W", "url": "https://hyperstage.wikibase.cloud/entity/P14"}
+                    ]
+                };
+                createGraph(data);
+            } catch(e) {
+                console.error("Impossibile utilizzare i dati incorporati:", e);
+            }
+        });
+
+        // Aggiungi gestori eventi per i pulsanti
+        document.getElementById('saveBtn').addEventListener('click', saveLayout);
+        document.getElementById('resetBtn').addEventListener('click', resetLayout);
+        document.getElementById('exportBtn').addEventListener('click', exportCurrentLayout);
+        document.getElementById('importFile').addEventListener('change', function(e) {
+            if (e.target.files.length > 0) {
+                importLayout(e.target.files[0]);
+            }
+        });
+
+        // Inizializza la lista dei layout
+        updateLayoutsList();
+    </script>
+</body>
+</html>
