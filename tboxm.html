@@ -257,7 +257,8 @@
         // Imposta lo stato iniziale del menu
         if (!menuVisible) {
             controlsPanel.classList.add('hidden');
-            toggleMenuBtn.textContent = '▶ Mostra Menu';
+            //toggleMenuBtn.textContent = '▶ Mostra Menu';
+            toggleMenuBtn.textContent = '▶';
             toggleMenuBtn.classList.remove('menu-visible');
         } else {
             toggleMenuBtn.classList.add('menu-visible');
@@ -269,13 +270,15 @@
             if (menuVisible) {
                 // Nascondi il menu
                 controlsPanel.classList.add('hidden');
-                toggleMenuBtn.textContent = '▶ Mostra Menu';
+                //toggleMenuBtn.textContent = '▶ Mostra Menu';
+                toggleMenuBtn.textContent = '▶';
                 toggleMenuBtn.classList.remove('menu-visible');
                 localStorage.setItem(MENU_STATE_KEY, 'hidden');
             } else {
                 // Mostra il menu
                 controlsPanel.classList.remove('hidden');
-                toggleMenuBtn.textContent = '◀ Nascondi Menu';
+                //toggleMenuBtn.textContent = '◀ Nascondi Menu';
+                toggleMenuBtn.textContent = '◀';
                 toggleMenuBtn.classList.add('menu-visible');
                 localStorage.setItem(MENU_STATE_KEY, 'visible');
             }
