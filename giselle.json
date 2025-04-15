@@ -1,7 +1,7 @@
 {
   "nodes": [
     {"id": "Q1", "label": "Q1-Theatrical production", "url": "https://hyperstage.wikibase.cloud/entity/Q1"},
-    {"id": "Q3", "label": "Q3-Creative work", "url": "https://hyperstage.wikibase.cloud/entity/Q3"},
+    {"id": "Q2", "label": "Q2-Theatrical creative work", "url": "https://hyperstage.wikibase.cloud/entity/Q2"},
 	{"id": "Q1231", "label": "Q1231-Giselle W1841", "url": "https://hyperstage.wikibase.cloud/entity/Q1231"},
 	{"id": "Q1317", "label": "Q1317-Giselle W1950", "url": "https://hyperstage.wikibase.cloud/entity/Q1317"},
 	{"id": "Q1305", "label": "Q1305-Giselle W1982", "url": "https://hyperstage.wikibase.cloud/entity/Q1305"},
@@ -11,9 +11,9 @@
   "links": [
     {"source": "Q386", "target": "Q1", "label": "P1-instance of", "url": "https://hyperstage.wikibase.cloud/entity/P1"},
 	{"source": "Q723", "target": "Q1", "label": "P1-instance of", "url": "https://hyperstage.wikibase.cloud/entity/P1"},
-    {"source": "Q1317", "target": "Q3", "label": "P1-instance of", "url": "https://hyperstage.wikibase.cloud/entity/P1"},
-    {"source": "Q1231", "target": "Q3", "label": "P1-instance of", "url": "https://hyperstage.wikibase.cloud/entity/P1"},
-    {"source": "Q1305", "target": "Q3", "label": "P1-instance of", "url": "https://hyperstage.wikibase.cloud/entity/P1"},
+    {"source": "Q1317", "target": "Q2", "label": "P1-instance of", "url": "https://hyperstage.wikibase.cloud/entity/P1"},
+    {"source": "Q1231", "target": "Q2", "label": "P1-instance of", "url": "https://hyperstage.wikibase.cloud/entity/P1"},
+    {"source": "Q1305", "target": "Q2", "label": "P1-instance of", "url": "https://hyperstage.wikibase.cloud/entity/P1"},
     {"source": "Q723", "target": "Q386", "label": "P115-P derived from P", "url": "https://hyperstage.wikibase.cloud/entity/P115"},
 	{"source": "Q386", "target": "Q1231", "label": "P6-staging of", "url": "https://hyperstage.wikibase.cloud/entity/P6"},
     {"source": "Q723", "target": "Q1317", "label": "P6-staging of", "url": "https://hyperstage.wikibase.cloud/entity/P6"},
