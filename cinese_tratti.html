@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ordine dei Tratti — 笔顺</title>
+  <script src="https://cdn.jsdelivr.net/npm/hanzi-writer@3.5/dist/hanzi-writer.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap');
+
+    :root {
+      --ink: #1a1008;
+      --paper: #f5f0e8;
+      --red: #c0392b;
+      --red-light: #e8c4bf;
+      --gold: #b8860b;
+      --grey: #8a7f72;
+      --stroke-color: #2c1810;
+      --radical-color: #c0392b;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--paper);
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 39px, #d9cfc0 39px, #d9cfc0 40px),
+        repeating-linear-gradient(90deg, transparent, transparent 39px, #d9cfc0 39px, #d9cfc0 40px);
+      background-size: 40px 40px;
+      min-height: 100vh;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      color: var(--ink);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px 60px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      color: var(--ink);
+      line-height: 1;
+    }
+
+    header h1 span.chinese {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 2.8rem;
+      color: var(--red);
+      margin-left: 12px;
+    }
+
+    header p {
+      font-size: 1rem;
+      color: var(--grey);
+      margin-top: 8px;
+      font-style: italic;
+      letter-spacing: 0.05em;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.72);
+      border: 1px solid #c9bfb0;
+      border-radius: 2px;
+      padding: 32px 36px;
+      width: 100%;
+      max-width: 560px;
+      box-shadow: 4px 4px 0 #d9cfc0, 8px 8px 0 #c9bfb0;
+      margin-bottom: 32px;
+    }
+
+    .input-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .input-row label {
+      font-size: 1rem;
+      color: var(--grey);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      white-space: nowrap;
+    }
+
+    #char-input {
+      flex: 1;
+      font-family: 'Noto Serif SC', serif;
+      font-size: 2.2rem;
+      text-align: center;
+      border: none;
+      border-bottom: 2px solid var(--ink);
+      background: transparent;
+      color: var(--ink);
+      padding: 4px 8px;
+      outline: none;
+      width: 70px;
+      max-width: 90px;
+      transition: border-color 0.2s;
+    }
+
+    #char-input:focus { border-color: var(--red); }
+
+    #load-btn {
+      background: var(--ink);
+      color: var(--paper);
+      border: none;
+      padding: 10px 22px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    #load-btn:hover { background: var(--red); }
+    #load-btn:active { transform: scale(0.97); }
+
+    .writer-area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+
+    #writer-target {
+      border: 1px solid #c9bfb0;
+      background: white;
+      display: none;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .btn {
+      background: transparent;
+      border: 1.5px solid var(--ink);
+      color: var(--ink);
+      padding: 8px 18px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      transition: all 0.18s;
+    }
+
+    .btn:hover { background: var(--ink); color: var(--paper); }
+    .btn.accent { border-color: var(--red); color: var(--red); }
+    .btn.accent:hover { background: var(--red); color: white; }
+
+    .stroke-info {
+      font-size: 0.9rem;
+      color: var(--grey);
+      font-style: italic;
+      text-align: center;
+      min-height: 1.4em;
+    }
+
+    .quiz-section {
+      width: 100%;
+      max-width: 560px;
+    }
+
+    .quiz-section h2 {
+      font-size: 1.1rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-bottom: 16px;
+      border-bottom: 1px solid #c9bfb0;
+      padding-bottom: 8px;
+    }
+
+    #quiz-target {
+      border: 1px solid #c9bfb0;
+      background: white;
+      display: none;
+    }
+
+    .quiz-controls {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    #error-msg {
+      color: var(--red);
+      font-style: italic;
+      font-size: 0.9rem;
+      min-height: 1.2em;
+      text-align: center;
+    }
+
+    .divider {
+      width: 100%;
+      max-width: 560px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #c9bfb0, transparent);
+      margin: 8px 0 24px;
+    }
+
+    #quiz-feedback {
+      font-size: 1rem;
+      min-height: 1.4em;
+      text-align: center;
+      font-style: italic;
+    }
+    #quiz-feedback.ok { color: #2e7d32; }
+    #quiz-feedback.err { color: var(--red); }
+
+    .speed-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .speed-row label { font-size: 0.82rem; color: var(--grey); letter-spacing: 0.06em; text-transform: uppercase; }
+    #speed-range { accent-color: var(--red); width: 100px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Ordine dei Tratti <span class="chinese">笔顺</span></h1>
+  <p>Strumento di studio per la scrittura cinese</p>
+</header>
+
+<div class="card">
+  <div class="input-row">
+    <label>Carattere</label>
+    <input id="char-input" type="text" maxlength="1" placeholder="字" autocomplete="off" spellcheck="false">
+    <button id="load-btn" onclick="loadCharacter()">Carica</button>
+  </div>
+  <div id="error-msg" style="margin-top:10px;"></div>
+</div>
+
+<div class="card writer-area" id="main-card" style="display:none;">
+  <svg id="writer-target" width="280" height="280"></svg>
+
+  <div class="stroke-info" id="stroke-info">—</div>
+
+  <div class="speed-row">
+    <label>Velocità</label>
+    <input type="range" id="speed-range" min="1" max="5" value="3" oninput="updateSpeed(this.value)">
+    <span id="speed-label" style="font-size:0.85rem;color:var(--grey);">Media</span>
+  </div>
+
+  <div class="controls">
+    <button class="btn accent" onclick="animateAll()">▶ Anima tutto</button>
+    <button class="btn" onclick="animateNext()">Prossimo tratto</button>
+    <button class="btn" onclick="writer.animatePrevStroke()">Tratto precedente</button>
+    <button class="btn" onclick="resetWriter()">↺ Ricomincia</button>
+    <button class="btn" onclick="toggleOutline()">Contorno</button>
+  </div>
+</div>
+
+<div class="divider" id="divider" style="display:none;"></div>
+
+<div class="quiz-section" id="quiz-section" style="display:none;">
+  <div class="card">
+    <h2>Modalità Esercizio</h2>
+    <svg id="quiz-target" width="280" height="280"></svg>
+    <div id="quiz-feedback" style="margin-top:12px;"></div>
+    <div class="quiz-controls">
+      <button class="btn accent" onclick="startQuiz()">▶ Inizia quiz</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  let writer = null;
+  let quizWriter = null;
+  let currentChar = '';
+  let outlineVisible = true;
+  let strokeCount = 0;
+  let currentStroke = 0;
+  let animating = false;
+  let speedVal = 3;
+
+  const speedLabels = ['Lenta','Lenta','Media','Veloce','Velocissima'];
+  const strokeDurations = [1200, 900, 600, 350, 180];
+
+  function updateSpeed(v) {
+    speedVal = parseInt(v);
+    document.getElementById('speed-label').textContent = speedLabels[speedVal - 1];
+  }
+
+  function loadCharacter() {
+    const input = document.getElementById('char-input').value.trim();
+    const err = document.getElementById('error-msg');
+    err.textContent = '';
+    if (!input || input.length !== 1) {
+      err.textContent = 'Inserisci esattamente un carattere cinese.';
+      return;
+    }
+    currentChar = input;
+    currentStroke = 0;
+    animating = false;
+
+    // Main writer
+    document.getElementById('writer-target').innerHTML = '';
+    document.getElementById('writer-target').style.display = 'block';
+    document.getElementById('main-card').style.display = 'flex';
+    document.getElementById('divider').style.display = 'block';
+    document.getElementById('quiz-section').style.display = 'block';
+    document.getElementById('quiz-target').style.display = 'none';
+    document.getElementById('quiz-feedback').textContent = '';
+
+    try {
+      writer = HanziWriter.create('writer-target', currentChar, {
+        width: 280,
+        height: 280,
+        padding: 20,
+        strokeColor: '#1a1008',
+        radicalColor: '#c0392b',
+        strokeAnimationSpeed: strokeDurations[speedVal - 1] / 1000,
+        delayBetweenStrokes: 400,
+        showOutline: true,
+        onLoadCharDataSuccess: function(charData) {
+          strokeCount = charData.strokes.length;
+          updateStrokeInfo();
+        },
+        onLoadCharDataError: function() {
+          document.getElementById('error-msg').textContent =
+            'Carattere non trovato nel database. Prova un altro carattere.';
+          document.getElementById('main-card').style.display = 'none';
+        }
+      });
+    } catch(e) {
+      err.textContent = 'Errore nel caricamento del carattere.';
+    }
+  }
+
+  function updateStrokeInfo() {
+    const info = document.getElementById('stroke-info');
+    if (strokeCount > 0) {
+      info.textContent = `Tratto ${currentStroke} di ${strokeCount} — ${strokeCount} tratti totali`;
+    }
+  }
+
+  function animateAll() {
+    if (!writer) return;
+    currentStroke = 0;
+    writer.animateCharacter({
+      strokeAnimationSpeed: strokeDurations[speedVal - 1] / 1000,
+      delayBetweenStrokes: 300,
+      onComplete: () => {
+        currentStroke = strokeCount;
+        updateStrokeInfo();
+      }
+    });
+  }
+
+  function animateNext() {
+    if (!writer) return;
+    if (currentStroke >= strokeCount) {
+      writer.hideCharacter({ duration: 200 });
+      currentStroke = 0;
+      setTimeout(() => {
+        writer.showOutline();
+        updateStrokeInfo();
+      }, 250);
+      return;
+    }
+    writer.animateStroke(currentStroke, {
+      strokeAnimationSpeed: strokeDurations[speedVal - 1] / 1000,
+      onComplete: () => {
+        currentStroke++;
+        updateStrokeInfo();
+      }
+    });
+  }
+
+  function resetWriter() {
+    if (!writer) return;
+    currentStroke = 0;
+    writer.hideCharacter({ duration: 300 });
+    setTimeout(() => {
+      writer.showOutline();
+      updateStrokeInfo();
+    }, 350);
+  }
+
+  function toggleOutline() {
+    if (!writer) return;
+    outlineVisible = !outlineVisible;
+    if (outlineVisible) writer.showOutline();
+    else writer.hideOutline();
+  }
+
+  function startQuiz() {
+    if (!currentChar) return;
+    const fb = document.getElementById('quiz-feedback');
+    fb.className = '';
+    fb.textContent = '';
+    document.getElementById('quiz-target').innerHTML = '';
+    document.getElementById('quiz-target').style.display = 'block';
+
+    quizWriter = HanziWriter.create('quiz-target', currentChar, {
+      width: 280,
+      height: 280,
+      padding: 20,
+      strokeColor: '#1a1008',
+      radicalColor: '#c0392b',
+      showCharacter: false,
+      showOutline: true,
+      highlightOnComplete: true,
+    });
+
+    quizWriter.quiz({
+      onMistake: function(strokeData) {
+        fb.className = 'err';
+        fb.textContent = `Errore al tratto ${strokeData.strokeNum + 1} — riprova!`;
+      },
+      onCorrectStroke: function(strokeData) {
+        fb.className = 'ok';
+        fb.textContent = `✓ Tratto ${strokeData.strokeNum + 1} corretto`;
+      },
+      onComplete: function(summaryData) {
+        fb.className = 'ok';
+        fb.textContent = `🎉 Completato! Errori totali: ${summaryData.totalMistakes}`;
+      }
+    });
+  }
+
+  // Enter key shortcut
+  document.getElementById('char-input').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') loadCharacter();
+  });
+</script>
+</body>
+</html>
